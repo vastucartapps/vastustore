@@ -1,50 +1,27 @@
-# Multi-stage build for Medusa v2 Backend
+# Medusa v2 Backend
+FROM node:20-alpine
 
-# Stage 1: Dependencies
-FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat python3 make g++
+
 WORKDIR /app
 
-# Copy package files
+# Copy package files and install
 COPY medusa-backend/package*.json ./
-RUN npm ci --legacy-peer-deps
+RUN npm install --legacy-peer-deps
 
-# Stage 2: Builder
-FROM node:20-alpine AS builder
-RUN apk add --no-cache python3 make g++
-WORKDIR /app
-
-# Copy dependencies from deps stage
-COPY --from=deps /app/node_modules ./node_modules
-COPY medusa-backend/ ./
-
-# Build Medusa
-RUN npm run build
-
-# Stage 3: Runner
-FROM node:20-alpine AS runner
-WORKDIR /app
-
-ENV NODE_ENV production
+# Copy config
+COPY medusa-backend/medusa-config.ts ./
 
 # Create non-root user
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 medusa
-
-# Copy necessary files
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/medusa-config.ts ./medusa-config.ts
-COPY --from=builder /app/package.json ./package.json
-
-# Set correct permissions
-RUN chown -R medusa:nodejs /app
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 medusa && \
+    chown -R medusa:nodejs /app
 
 USER medusa
 
 EXPOSE 9000
 
-ENV PORT 9000
+ENV NODE_ENV=production PORT=9000
 
-# Run migrations and start Medusa
-CMD npx medusa migrations run && npx medusa start
+# Run migrations and start
+CMD ["sh", "-c", "npx medusa migrations run && npx medusa start"]
