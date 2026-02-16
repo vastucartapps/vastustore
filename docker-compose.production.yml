@@ -79,6 +79,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
+      args:
+        DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgrespass}@postgres:5432/vastucart_db
     container_name: vastucart-frontend
     depends_on:
       - postgres

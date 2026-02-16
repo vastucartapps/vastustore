@@ -21,6 +21,10 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 
+# Accept DATABASE_URL as build arg for Prisma
+ARG DATABASE_URL="postgresql://postgres:postgres@localhost:5432/vastucart_db"
+ENV DATABASE_URL=${DATABASE_URL}
+
 # Generate Prisma Client
 RUN npx prisma generate
 
