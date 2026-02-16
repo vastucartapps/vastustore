@@ -21,14 +21,7 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
 
-# Accept DATABASE_URL as build arg for Prisma
-ARG DATABASE_URL="postgresql://postgres:postgres@localhost:5432/vastucart_db"
-ENV DATABASE_URL=${DATABASE_URL}
-
-# Generate Prisma Client
-RUN npx prisma generate
-
-# Build Next.js
+# Build Next.js (Prisma will be generated at runtime)
 RUN npm run build
 
 # Stage 3: Runner
@@ -59,5 +52,5 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
-# Run migrations and start app
-CMD npx prisma migrate deploy && node server.js
+# Generate Prisma client, run migrations, and start app
+CMD npx prisma generate && npx prisma migrate deploy && node server.js
