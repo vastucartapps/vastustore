@@ -1,12 +1,20 @@
--- Initialize VastuCart Database
--- This script creates the database schema for both Medusa and the Next.js app
+-- Initialize VastuCart Databases
+-- This script creates databases for Medusa backend and Next.js app
 
--- The database 'vastucart_db' will be created automatically by Docker
--- This file ensures proper initialization
+-- Create Medusa database
+CREATE DATABASE medusa;
 
--- Create extensions if needed
+-- Create VastuCart app database (if not exists)
+-- Note: vastucart_db is created by POSTGRES_DB env variable
+
+-- Connect to medusa database and set up extensions
+\c medusa;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pg_trgm";
+GRANT ALL PRIVILEGES ON DATABASE medusa TO postgres;
 
--- Grant all privileges
+-- Connect to vastucart_db and set up extensions
+\c vastucart_db;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "pg_trgm";
 GRANT ALL PRIVILEGES ON DATABASE vastucart_db TO postgres;

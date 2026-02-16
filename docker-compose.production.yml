@@ -36,7 +36,46 @@ services:
       - vastucart-network
     restart: unless-stopped
 
-  # Next.js Frontend (with Medusa SDK embedded)
+  # Medusa v2 Backend (Commerce Engine)
+  medusa:
+    build:
+      context: .
+      dockerfile: Dockerfile.medusa
+    container_name: vastucart-medusa
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      # Database (medusa schema in postgres)
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgrespass}@postgres:5432/medusa
+
+      # Redis
+      REDIS_URL: redis://redis:6379
+
+      # Medusa Secrets
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      COOKIE_SECRET: ${COOKIE_SECRET:-change-me-in-production}
+      MEDUSA_ADMIN_API_KEY: ${MEDUSA_ADMIN_API_KEY}
+
+      # CORS
+      STORE_CORS: https://store.vastucart.in
+      ADMIN_CORS: https://store.vastucart.in
+      AUTH_CORS: https://store.vastucart.in
+
+      # Medusa Backend URL
+      MEDUSA_BACKEND_URL: https://api-store.vastucart.in
+
+      # Application
+      NODE_ENV: production
+    ports:
+      - "9000:9000"
+    networks:
+      - vastucart-network
+    restart: unless-stopped
+
+  # Next.js Frontend
   frontend:
     build:
       context: .
@@ -47,16 +86,15 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+      medusa:
+        condition: service_started
     environment:
-      # Medusa SDK will use DATABASE_URL directly
+      # Medusa API
+      NEXT_PUBLIC_MEDUSA_API_URL: https://api-store.vastucart.in
       MEDUSA_ADMIN_API_KEY: ${MEDUSA_ADMIN_API_KEY}
 
       # Redis
       REDIS_URL: redis://redis:6379
-
-      # Medusa Secrets
-      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
-      COOKIE_SECRET: ${COOKIE_SECRET:-change-me-in-production}
 
       # AstroEngine Auth
       NEXT_PUBLIC_ASTRO_API_URL: https://api.vastucart.in/api/v1
