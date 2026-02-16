@@ -1,0 +1,187 @@
+{
+  "_meta": {
+    "models": {
+      "HeroSlide": "A full-width homepage banner slide with image, heading, subtext, and CTA button.",
+      "CategoryCard": "A product category displayed as an image overlay card on the homepage grid.",
+      "ProductCard": "A compact product representation for grids and carousels — image, name, price, rating, variants.",
+      "DealProduct": "A product with a time-limited discount and countdown expiry.",
+      "Testimonial": "An admin-curated customer testimonial with quote, name, photo, location, and optional star rating.",
+      "TrustBadge": "A trust/reassurance badge shown on the homepage (e.g., Free Shipping, Secure Payment).",
+      "FilterGroup": "A collapsible filter section in the category sidebar (price, rating, availability, attributes).",
+      "Breadcrumb": "A breadcrumb navigation item with label and href.",
+      "SearchSuggestion": "An autocomplete suggestion shown while typing in the search bar.",
+      "StaticPage": "A static content page like About, Contact, or a policy page."
+    },
+    "relationships": [
+      "CategoryCard links to a category listing page",
+      "ProductCard references a Product and its primary variant",
+      "DealProduct extends ProductCard with discount and expiry info",
+      "SearchSuggestion can reference a ProductCard or CategoryCard",
+      "FilterGroup contains filter options derived from product attributes"
+    ]
+  },
+  "announcement": {
+    "message": "Free shipping on orders above ₹999 — Use code VASTUFREE",
+    "link": "/offers",
+    "isActive": true
+  },
+  "heroSlides": [
+    {
+      "id": "hero-1",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&h=500&fit=crop",
+      "heading": "Sacred Spaces, Beautiful Living",
+      "subtext": "Discover handpicked Vastu-compliant décor for every room in your home",
+      "ctaLabel": "Shop Collection",
+      "ctaLink": "/categories/vastu-decor",
+      "order": 1
+    },
+    {
+      "id": "hero-2",
+      "imageUrl": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1400&h=500&fit=crop",
+      "heading": "New Arrivals — Brass Collection",
+      "subtext": "Artisan-crafted brass items that bring warmth and positive energy",
+      "ctaLabel": "Explore New Arrivals",
+      "ctaLink": "/new-arrivals",
+      "order": 2
+    },
+    {
+      "id": "hero-3",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&h=500&fit=crop",
+      "heading": "Monsoon Sale — Up to 40% Off",
+      "subtext": "Limited time offer on select spiritual and home décor items",
+      "ctaLabel": "Shop Sale",
+      "ctaLink": "/sale",
+      "order": 3
+    }
+  ],
+  "categories": [
+    { "id": "cat-1", "name": "Vastu Décor", "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop", "slug": "vastu-decor", "productCount": 48 },
+    { "id": "cat-2", "name": "Brass & Copper", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=300&fit=crop", "slug": "brass-copper", "productCount": 35 },
+    { "id": "cat-3", "name": "Crystals & Stones", "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&h=300&fit=crop", "slug": "crystals-stones", "productCount": 62 },
+    { "id": "cat-4", "name": "Pooja Essentials", "imageUrl": "https://images.unsplash.com/photo-1609947017136-9dba29e4e4c0?w=400&h=300&fit=crop", "slug": "pooja-essentials", "productCount": 29 },
+    { "id": "cat-5", "name": "Incense & Aromatherapy", "imageUrl": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=300&fit=crop", "slug": "incense-aromatherapy", "productCount": 41 },
+    { "id": "cat-6", "name": "Wall Art & Hangings", "imageUrl": "https://images.unsplash.com/photo-1582643381669-1fdba1d7489b?w=400&h=300&fit=crop", "slug": "wall-art-hangings", "productCount": 23 },
+    { "id": "cat-7", "name": "Books & Guides", "imageUrl": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=300&fit=crop", "slug": "books-guides", "productCount": 18 },
+    { "id": "cat-8", "name": "Consultations", "imageUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop", "slug": "consultations", "productCount": 5 }
+  ],
+  "featuredProducts": [
+    { "id": "prod-1", "name": "Seven Chakra Crystal Tree", "slug": "seven-chakra-crystal-tree", "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400", "price": 1299, "mrp": 1899, "currency": "INR", "rating": 4.7, "reviewCount": 124, "variantCount": 3, "isNew": false, "inStock": true },
+    { "id": "prod-2", "name": "Brass Ganesha Idol — 8 inch", "slug": "brass-ganesha-idol-8-inch", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 2450, "mrp": 2450, "currency": "INR", "rating": 4.9, "reviewCount": 87, "variantCount": 2, "isNew": false, "inStock": true },
+    { "id": "prod-3", "name": "Vastu Pyramid Set — Rose Quartz", "slug": "vastu-pyramid-set-rose-quartz", "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400", "price": 899, "mrp": 1299, "currency": "INR", "rating": 4.5, "reviewCount": 56, "variantCount": 1, "isNew": false, "inStock": true },
+    { "id": "prod-4", "name": "Camphor & Sandalwood Incense Cones", "slug": "camphor-sandalwood-incense-cones", "imageUrl": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400", "price": 349, "mrp": 499, "currency": "INR", "rating": 4.3, "reviewCount": 203, "variantCount": 4, "isNew": false, "inStock": true },
+    { "id": "prod-5", "name": "Copper Kalash with Coconut", "slug": "copper-kalash-with-coconut", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 1750, "mrp": 2200, "currency": "INR", "rating": 4.8, "reviewCount": 45, "variantCount": 1, "isNew": false, "inStock": true },
+    { "id": "prod-6", "name": "Handpainted Madhubani Wall Plate", "slug": "handpainted-madhubani-wall-plate", "imageUrl": "https://images.unsplash.com/photo-1582643381669-1fdba1d7489b?w=400", "price": 1100, "mrp": 1100, "currency": "INR", "rating": 4.6, "reviewCount": 31, "variantCount": 5, "isNew": false, "inStock": true }
+  ],
+  "newArrivals": [
+    { "id": "prod-7", "name": "Amethyst Cluster — Raw", "slug": "amethyst-cluster-raw", "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400", "price": 2100, "mrp": 2100, "currency": "INR", "rating": 0, "reviewCount": 0, "variantCount": 1, "isNew": true, "inStock": true },
+    { "id": "prod-8", "name": "Narmada Shivling — 4 inch", "slug": "narmada-shivling-4-inch", "imageUrl": "https://images.unsplash.com/photo-1609947017136-9dba29e4e4c0?w=400", "price": 650, "mrp": 850, "currency": "INR", "rating": 0, "reviewCount": 0, "variantCount": 2, "isNew": true, "inStock": true },
+    { "id": "prod-9", "name": "Tulsi Mala — 108 Beads", "slug": "tulsi-mala-108-beads", "imageUrl": "https://images.unsplash.com/photo-1609947017136-9dba29e4e4c0?w=400", "price": 450, "mrp": 450, "currency": "INR", "rating": 5.0, "reviewCount": 3, "variantCount": 1, "isNew": true, "inStock": true },
+    { "id": "prod-10", "name": "Feng Shui Laughing Buddha — Gold", "slug": "feng-shui-laughing-buddha-gold", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 1899, "mrp": 2499, "currency": "INR", "rating": 4.4, "reviewCount": 12, "variantCount": 3, "isNew": true, "inStock": true },
+    { "id": "prod-11", "name": "Organic Dhoop Sticks — Mogra", "slug": "organic-dhoop-sticks-mogra", "imageUrl": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400", "price": 199, "mrp": 299, "currency": "INR", "rating": 4.1, "reviewCount": 8, "variantCount": 6, "isNew": true, "inStock": false }
+  ],
+  "bestsellers": [
+    { "id": "prod-2", "name": "Brass Ganesha Idol — 8 inch", "slug": "brass-ganesha-idol-8-inch", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 2450, "mrp": 2450, "currency": "INR", "rating": 4.9, "reviewCount": 87, "variantCount": 2, "isNew": false, "inStock": true },
+    { "id": "prod-4", "name": "Camphor & Sandalwood Incense Cones", "slug": "camphor-sandalwood-incense-cones", "imageUrl": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400", "price": 349, "mrp": 499, "currency": "INR", "rating": 4.3, "reviewCount": 203, "variantCount": 4, "isNew": false, "inStock": true },
+    { "id": "prod-1", "name": "Seven Chakra Crystal Tree", "slug": "seven-chakra-crystal-tree", "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400", "price": 1299, "mrp": 1899, "currency": "INR", "rating": 4.7, "reviewCount": 124, "variantCount": 3, "isNew": false, "inStock": true },
+    { "id": "prod-5", "name": "Copper Kalash with Coconut", "slug": "copper-kalash-with-coconut", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 1750, "mrp": 2200, "currency": "INR", "rating": 4.8, "reviewCount": 45, "variantCount": 1, "isNew": false, "inStock": true },
+    { "id": "prod-12", "name": "Vastu Compass — Professional Grade", "slug": "vastu-compass-professional-grade", "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400", "price": 3200, "mrp": 4500, "currency": "INR", "rating": 4.6, "reviewCount": 67, "variantCount": 1, "isNew": false, "inStock": true }
+  ],
+  "deals": [
+    { "id": "prod-3", "name": "Vastu Pyramid Set — Rose Quartz", "slug": "vastu-pyramid-set-rose-quartz", "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400", "price": 899, "mrp": 1299, "currency": "INR", "rating": 4.5, "reviewCount": 56, "variantCount": 1, "isNew": false, "inStock": true, "discountPercent": 31, "expiresAt": "2026-02-20T23:59:59Z" },
+    { "id": "prod-10", "name": "Feng Shui Laughing Buddha — Gold", "slug": "feng-shui-laughing-buddha-gold", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400", "price": 1899, "mrp": 2499, "currency": "INR", "rating": 4.4, "reviewCount": 12, "variantCount": 3, "isNew": true, "inStock": true, "discountPercent": 24, "expiresAt": "2026-02-18T23:59:59Z" },
+    { "id": "prod-8", "name": "Narmada Shivling — 4 inch", "slug": "narmada-shivling-4-inch", "imageUrl": "https://images.unsplash.com/photo-1609947017136-9dba29e4e4c0?w=400", "price": 650, "mrp": 850, "currency": "INR", "rating": 0, "reviewCount": 0, "variantCount": 2, "isNew": true, "inStock": true, "discountPercent": 24, "expiresAt": "2026-02-28T23:59:59Z" }
+  ],
+  "testimonials": [
+    { "id": "test-1", "quote": "The brass Ganesha idol is absolutely stunning. The craftsmanship is exceptional, and it has completely transformed our pooja room. Highly recommend VastuCart for authentic spiritual décor.", "name": "Meera Iyer", "location": "Bangalore", "avatarUrl": null, "rating": 5, "type": "review", "productName": "Brass Ganesha Idol" },
+    { "id": "test-2", "quote": "I've been buying crystals online for years, and VastuCart is by far the most trustworthy source. Every piece comes with an authenticity certificate and the packaging is beautiful.", "name": "Ankit Verma", "location": "Jaipur", "avatarUrl": null, "rating": 5, "type": "testimonial", "productName": null },
+    { "id": "test-3", "quote": "Ordered the seven chakra tree as a housewarming gift. It arrived in perfect condition, beautifully wrapped. My friend loved it! Will definitely order again.", "name": "Sneha Kulkarni", "location": "Pune", "avatarUrl": null, "rating": 4, "type": "review", "productName": "Seven Chakra Crystal Tree" },
+    { "id": "test-4", "quote": "The Vastu consultation I booked through VastuCart was life-changing. The consultant was knowledgeable and gave practical suggestions that I could implement immediately.", "name": "Rajesh Gupta", "location": "Delhi", "avatarUrl": null, "rating": 5, "type": "testimonial", "productName": null }
+  ],
+  "trustBadges": [
+    { "id": "badge-1", "label": "Free Shipping", "sublabel": "On orders above ₹999", "icon": "truck" },
+    { "id": "badge-2", "label": "Secure Payment", "sublabel": "100% protected checkout", "icon": "shield" },
+    { "id": "badge-3", "label": "Easy Returns", "sublabel": "7-day return policy", "icon": "refresh" },
+    { "id": "badge-4", "label": "Authentic Products", "sublabel": "Certified & genuine", "icon": "badge-check" }
+  ],
+  "filterGroups": [
+    {
+      "id": "filter-price",
+      "label": "Price Range",
+      "type": "range",
+      "min": 99,
+      "max": 10000,
+      "options": []
+    },
+    {
+      "id": "filter-rating",
+      "label": "Customer Rating",
+      "type": "rating",
+      "min": 0,
+      "max": 0,
+      "options": [
+        { "label": "4★ & above", "value": "4", "count": 38 },
+        { "label": "3★ & above", "value": "3", "count": 52 },
+        { "label": "2★ & above", "value": "2", "count": 55 }
+      ]
+    },
+    {
+      "id": "filter-availability",
+      "label": "Availability",
+      "type": "toggle",
+      "min": 0,
+      "max": 0,
+      "options": [
+        { "label": "In Stock Only", "value": "in-stock", "count": 51 }
+      ]
+    },
+    {
+      "id": "filter-material",
+      "label": "Material",
+      "type": "checkbox",
+      "min": 0,
+      "max": 0,
+      "options": [
+        { "label": "Brass", "value": "brass", "count": 18 },
+        { "label": "Copper", "value": "copper", "count": 12 },
+        { "label": "Crystal", "value": "crystal", "count": 24 },
+        { "label": "Wood", "value": "wood", "count": 9 },
+        { "label": "Stone", "value": "stone", "count": 15 }
+      ]
+    },
+    {
+      "id": "filter-category",
+      "label": "Category",
+      "type": "checkbox",
+      "min": 0,
+      "max": 0,
+      "options": [
+        { "label": "Vastu Décor", "value": "vastu-decor", "count": 48 },
+        { "label": "Brass & Copper", "value": "brass-copper", "count": 35 },
+        { "label": "Crystals & Stones", "value": "crystals-stones", "count": 62 },
+        { "label": "Pooja Essentials", "value": "pooja-essentials", "count": 29 }
+      ]
+    }
+  ],
+  "sortOptions": [
+    { "label": "Relevance", "value": "relevance" },
+    { "label": "Price: Low to High", "value": "price-asc" },
+    { "label": "Price: High to Low", "value": "price-desc" },
+    { "label": "Newest First", "value": "newest" },
+    { "label": "Avg. Rating", "value": "rating" }
+  ],
+  "searchSuggestions": [
+    { "type": "product", "label": "Seven Chakra Crystal Tree", "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=80", "price": 1299, "slug": "seven-chakra-crystal-tree" },
+    { "type": "product", "label": "Brass Ganesha Idol — 8 inch", "imageUrl": "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=80", "price": 2450, "slug": "brass-ganesha-idol-8-inch" },
+    { "type": "category", "label": "Crystals & Stones", "imageUrl": null, "price": null, "slug": "crystals-stones" },
+    { "type": "query", "label": "vastu pyramid", "imageUrl": null, "price": null, "slug": null }
+  ],
+  "staticPages": [
+    { "id": "page-about", "title": "About Us", "slug": "about", "excerpt": "Learn about VastuCart's mission to bring authentic Vastu and spiritual products to your doorstep." },
+    { "id": "page-contact", "title": "Contact Us", "slug": "contact", "excerpt": "Get in touch with our support team for any questions or feedback." },
+    { "id": "page-faq", "title": "Frequently Asked Questions", "slug": "faq", "excerpt": "Find answers to common questions about orders, shipping, returns, and more." },
+    { "id": "page-privacy", "title": "Privacy Policy", "slug": "privacy-policy", "excerpt": "" },
+    { "id": "page-terms", "title": "Terms & Conditions", "slug": "terms", "excerpt": "" },
+    { "id": "page-shipping", "title": "Shipping Policy", "slug": "shipping-policy", "excerpt": "" },
+    { "id": "page-refund", "title": "Refund Policy", "slug": "refund-policy", "excerpt": "" }
+  ]
+}

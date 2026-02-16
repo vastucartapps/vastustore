@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "models": {
+      "ReviewItem": "A customer review pending moderation or already moderated.",
+      "QAItem": "A product question from a customer, optionally answered by admin."
+    },
+    "relationships": [
+      "Reviews and Q&A items reference a Product by productId.",
+      "Reviews may have an admin response. Q&A items may have an admin answer."
+    ]
+  },
+  "activeTab": "reviews",
+  "reviewStatusFilter": "pending",
+  "qaStatusFilter": "unanswered",
+  "searchQuery": "",
+  "reviews": [
+    {
+      "id": "rev-501", "customerName": "Priya Sharma", "customerEmail": "priya.sharma@example.com",
+      "productId": "prod-1", "productName": "Brass Ganesha Idol – Medium",
+      "productImageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=80&h=80&fit=crop",
+      "rating": 5, "title": "Absolutely stunning craftsmanship",
+      "text": "The idol is beautifully detailed and has a wonderful antique finish. The trunk and crown detailing is exceptional. Arrived well-packaged with certificate of authenticity.",
+      "photos": ["https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=200&h=200&fit=crop", "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=200&h=200&fit=crop"],
+      "isVerifiedPurchase": true, "status": "pending", "adminResponse": null, "createdAt": "2026-02-12T10:00:00Z"
+    },
+    {
+      "id": "rev-502", "customerName": "Amit Patel", "customerEmail": "amit.patel@example.com",
+      "productId": "prod-5", "productName": "Sandalwood Incense Sticks – 100 Pack",
+      "productImageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=80&h=80&fit=crop",
+      "rating": 4, "title": "Good quality but packaging could improve",
+      "text": "The fragrance is authentic and burns evenly. However, a few sticks were broken in transit. Would recommend better inner packaging.",
+      "photos": [],
+      "isVerifiedPurchase": true, "status": "pending", "adminResponse": null, "createdAt": "2026-02-11T15:30:00Z"
+    },
+    {
+      "id": "rev-503", "customerName": "Michael Chen", "customerEmail": "michael.c@example.com",
+      "productId": "prod-4", "productName": "Vastu Pyramid – Crystal Clear",
+      "productImageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=80&h=80&fit=crop",
+      "rating": 1, "title": "Arrived damaged",
+      "text": "The crystal pyramid had a visible crack on the base. Very disappointed. I've initiated a return request.",
+      "photos": ["https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=200&h=200&fit=crop"],
+      "isVerifiedPurchase": true, "status": "pending", "adminResponse": null, "createdAt": "2026-02-13T08:15:00Z"
+    },
+    {
+      "id": "rev-504", "customerName": "RandomUser123", "customerEmail": "random@spam.com",
+      "productId": "prod-7", "productName": "5 Mukhi Rudraksha – Certified",
+      "productImageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=80&h=80&fit=crop",
+      "rating": 1, "title": "Fake product",
+      "text": "This is clearly not genuine. I can buy the same thing for ₹50 at the local market. Total scam.",
+      "photos": [],
+      "isVerifiedPurchase": false, "status": "pending", "adminResponse": null, "createdAt": "2026-02-10T22:00:00Z"
+    },
+    {
+      "id": "rev-505", "customerName": "Deepika Menon", "customerEmail": "deepika.menon@example.com",
+      "productId": "prod-3", "productName": "Camphor Tablets – Pack of 50",
+      "productImageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=80&h=80&fit=crop",
+      "rating": 5, "title": "Pure and fragrant",
+      "text": "These camphor tablets are the best I've found online. They burn cleanly and the fragrance fills the entire puja room. Will definitely reorder.",
+      "photos": [],
+      "isVerifiedPurchase": true, "status": "approved", "adminResponse": "Thank you for your kind words, Deepika! We're glad you love our camphor tablets.", "createdAt": "2026-02-05T09:00:00Z"
+    },
+    {
+      "id": "rev-506", "customerName": "SpamBot", "customerEmail": "spam@bot.com",
+      "productId": "prod-1", "productName": "Brass Ganesha Idol – Medium",
+      "productImageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=80&h=80&fit=crop",
+      "rating": 1, "title": "Buy cheap watches at...",
+      "text": "Visit our website for cheap watches and electronics. Best deals online! www.spam-site.com",
+      "photos": [],
+      "isVerifiedPurchase": false, "status": "rejected", "adminResponse": null, "createdAt": "2026-02-08T03:00:00Z"
+    }
+  ],
+  "qaItems": [
+    {
+      "id": "qa-201", "customerName": "Rajesh Kumar", "productId": "prod-1",
+      "productName": "Brass Ganesha Idol – Medium",
+      "productImageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=80&h=80&fit=crop",
+      "question": "Is this idol suitable for outdoor placement in a garden temple?",
+      "answer": null, "answeredBy": null, "status": "unanswered",
+      "createdAt": "2026-02-13T14:00:00Z", "answeredAt": null
+    },
+    {
+      "id": "qa-202", "customerName": "Meera Joshi", "productId": "prod-4",
+      "productName": "Vastu Pyramid – Crystal Clear",
+      "productImageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=80&h=80&fit=crop",
+      "question": "What is the exact weight and dimensions of the medium pyramid?",
+      "answer": null, "answeredBy": null, "status": "unanswered",
+      "createdAt": "2026-02-12T11:30:00Z", "answeredAt": null
+    },
+    {
+      "id": "qa-203", "customerName": "Kavita Singh", "productId": "prod-7",
+      "productName": "5 Mukhi Rudraksha – Certified",
+      "productImageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=80&h=80&fit=crop",
+      "question": "Does the certificate include lab testing details? Can I verify it independently?",
+      "answer": null, "answeredBy": null, "status": "unanswered",
+      "createdAt": "2026-02-11T16:45:00Z", "answeredAt": null
+    },
+    {
+      "id": "qa-204", "customerName": "Sunita Verma", "productId": "prod-5",
+      "productName": "Sandalwood Incense Sticks – 100 Pack",
+      "productImageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=80&h=80&fit=crop",
+      "question": "How long does each stick burn for?",
+      "answer": "Each sandalwood incense stick burns for approximately 30-40 minutes depending on air circulation. They produce a gentle, natural sandalwood fragrance throughout.",
+      "answeredBy": "VastuCart Team", "status": "answered",
+      "createdAt": "2026-02-08T09:00:00Z", "answeredAt": "2026-02-08T14:30:00Z"
+    },
+    {
+      "id": "qa-205", "customerName": "John Davis", "productId": "prod-3",
+      "productName": "Camphor Tablets – Pack of 50",
+      "productImageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=80&h=80&fit=crop",
+      "question": "Are these camphor tablets safe to use around pets?",
+      "answer": "We recommend keeping camphor tablets away from pets as camphor can be irritating to animals. Use in a well-ventilated puja room with the door closed during aarti.",
+      "answeredBy": "VastuCart Team", "status": "answered",
+      "createdAt": "2026-02-06T13:00:00Z", "answeredAt": "2026-02-07T10:00:00Z"
+    }
+  ]
+}

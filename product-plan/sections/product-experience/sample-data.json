@@ -1,0 +1,423 @@
+{
+  "_meta": {
+    "models": {
+      "product": "A detailed product with all fields needed for the product detail page.",
+      "productImage": "An image in the product gallery with order, alt text, and type.",
+      "productVariant": "A purchasable variation with its own SKU, price, stock, and images.",
+      "richContentBlock": "An A+ content block — either a hero image or a comparison table.",
+      "specificationGroup": "A group of key-value specifications for the product.",
+      "faq": "An admin-managed frequently asked question about the product.",
+      "question": "A customer-submitted question with an optional answer.",
+      "review": "A customer review with rating, text, optional photos, and verified status.",
+      "relatedProduct": "A product card shown in the related products carousel.",
+      "breadcrumb": "A navigation breadcrumb item in the category hierarchy."
+    },
+    "relationships": [
+      "Product has many ProductImage, ProductVariant, RichContentBlock, SpecificationGroup, FAQ, Question, Review",
+      "Product has many RelatedProduct (references other products)",
+      "Breadcrumb is an ordered list derived from the product's category hierarchy"
+    ]
+  },
+  "product": {
+    "id": "prod_001",
+    "name": "Seven Chakra Healing Crystal Tree",
+    "slug": "seven-chakra-healing-crystal-tree",
+    "description": "Handcrafted seven chakra crystal tree featuring genuine gemstones representing each energy center. Each stone is carefully selected and wire-wrapped onto a natural amethyst base, creating a stunning display piece that harmonizes the energy in your home or office space. The tree stands approximately 10 inches tall and features over 300 individual crystal chips.",
+    "shortDescription": "Genuine gemstone tree with 300+ crystal chips on amethyst base — balances all seven chakras.",
+    "currency": "INR",
+    "price": 2499,
+    "mrp": 4999,
+    "discountPercent": 50,
+    "rating": 4.3,
+    "reviewCount": 147,
+    "inStock": true,
+    "sku": "VCT-7CKR-001",
+    "isNew": false,
+    "expressShipping": true,
+    "deliveryEstimate": "Delivery by Feb 18–20",
+    "returnPolicy": "7-day easy returns"
+  },
+  "images": [
+    { "id": "img_01", "url": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=800&q=80", "alt": "Seven Chakra Crystal Tree — front view", "type": "primary", "order": 1 },
+    { "id": "img_02", "url": "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=800&q=80", "alt": "Crystal tree close-up showing gemstone chips", "type": "gallery", "order": 2 },
+    { "id": "img_03", "url": "https://images.unsplash.com/photo-1602519093485-0630df691f68?w=800&q=80", "alt": "Crystal tree on wooden shelf in living room", "type": "gallery", "order": 3 },
+    { "id": "img_04", "url": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=800&q=80", "alt": "Amethyst base detail", "type": "gallery", "order": 4 },
+    { "id": "img_05", "url": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80", "alt": "Crystal tree with candle arrangement", "type": "gallery", "order": 5 },
+    { "id": "img_06", "url": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=800&q=80", "alt": "Side view showing crystal density", "type": "gallery", "order": 6 },
+    { "id": "img_07", "url": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=800&q=80", "alt": "Crystal tree in meditation space", "type": "gallery", "order": 7 }
+  ],
+  "variants": [
+    {
+      "id": "var_01",
+      "attributes": { "size": "Medium (10\")", "base": "Amethyst" },
+      "sku": "VCT-7CKR-M-AME",
+      "price": 2499,
+      "mrp": 4999,
+      "inStock": true,
+      "stockCount": 23,
+      "colorSwatch": null
+    },
+    {
+      "id": "var_02",
+      "attributes": { "size": "Medium (10\")", "base": "Clear Quartz" },
+      "sku": "VCT-7CKR-M-CLR",
+      "price": 2699,
+      "mrp": 5299,
+      "inStock": true,
+      "stockCount": 8,
+      "colorSwatch": null
+    },
+    {
+      "id": "var_03",
+      "attributes": { "size": "Large (14\")", "base": "Amethyst" },
+      "sku": "VCT-7CKR-L-AME",
+      "price": 3999,
+      "mrp": 7499,
+      "inStock": true,
+      "stockCount": 5,
+      "colorSwatch": null
+    },
+    {
+      "id": "var_04",
+      "attributes": { "size": "Large (14\")", "base": "Clear Quartz" },
+      "sku": "VCT-7CKR-L-CLR",
+      "price": 4299,
+      "mrp": 7999,
+      "inStock": false,
+      "stockCount": 0,
+      "colorSwatch": null
+    },
+    {
+      "id": "var_05",
+      "attributes": { "size": "Small (6\")", "base": "Rose Quartz" },
+      "sku": "VCT-7CKR-S-RSQ",
+      "price": 1499,
+      "mrp": 2999,
+      "inStock": true,
+      "stockCount": 41,
+      "colorSwatch": "#F4C2C2"
+    }
+  ],
+  "variantAttributes": [
+    {
+      "name": "size",
+      "label": "Size",
+      "type": "dropdown",
+      "values": ["Small (6\")", "Medium (10\")", "Large (14\")"]
+    },
+    {
+      "name": "base",
+      "label": "Base Stone",
+      "type": "swatch",
+      "values": [
+        { "value": "Amethyst", "color": "#9966CC" },
+        { "value": "Clear Quartz", "color": "#F5F5F5" },
+        { "value": "Rose Quartz", "color": "#F4C2C2" }
+      ]
+    }
+  ],
+  "richContent": [
+    {
+      "id": "rc_01",
+      "type": "hero",
+      "title": "The Art of Crystal Energy",
+      "imageUrl": "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=1600&q=80",
+      "headline": "Handcrafted with Intention",
+      "description": "Every VastuCart crystal tree is carefully assembled by skilled artisans who understand the ancient science of Vastu Shastra. Each gemstone is cleansed, energized under moonlight, and wire-wrapped with precision to create a piece that's as beautiful as it is powerful. Our trees feature genuine stones — Amethyst for the Crown, Lapis Lazuli for the Third Eye, Sodalite for the Throat, Green Aventurine for the Heart, Citrine for the Solar Plexus, Carnelian for the Sacral, and Red Jasper for the Root chakra."
+    },
+    {
+      "id": "rc_02",
+      "type": "comparison",
+      "title": "Compare Our Crystal Trees",
+      "products": [
+        {
+          "asin": "VCT-7CKR-001",
+          "name": "Seven Chakra Crystal Tree",
+          "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80",
+          "isCurrentProduct": true
+        },
+        {
+          "asin": "VCT-AMET-001",
+          "name": "Amethyst Crystal Tree",
+          "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+          "isCurrentProduct": false
+        },
+        {
+          "asin": "VCT-ROSE-001",
+          "name": "Rose Quartz Crystal Tree",
+          "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80",
+          "isCurrentProduct": false
+        }
+      ],
+      "metrics": [
+        { "label": "Genuine Gemstones", "values": [true, true, true] },
+        { "label": "Multiple Chakras", "values": [true, false, false] },
+        { "label": "Amethyst Base", "values": [true, true, false] },
+        { "label": "300+ Crystal Chips", "values": [true, false, true] },
+        { "label": "Gift Box Included", "values": [true, true, false] },
+        { "label": "Certificate of Authenticity", "values": [true, true, true] }
+      ]
+    }
+  ],
+  "specificationGroups": [
+    {
+      "groupName": "General",
+      "specs": [
+        { "key": "Material", "value": "Natural Gemstones, Copper Wire" },
+        { "key": "Base Material", "value": "Amethyst Cluster" },
+        { "key": "Height", "value": "10 inches (25 cm)" },
+        { "key": "Weight", "value": "450 grams" },
+        { "key": "Crystal Count", "value": "300+ chips" }
+      ]
+    },
+    {
+      "groupName": "Chakra Stones",
+      "specs": [
+        { "key": "Crown (Sahasrara)", "value": "Amethyst" },
+        { "key": "Third Eye (Ajna)", "value": "Lapis Lazuli" },
+        { "key": "Throat (Vishuddha)", "value": "Sodalite" },
+        { "key": "Heart (Anahata)", "value": "Green Aventurine" },
+        { "key": "Solar Plexus (Manipura)", "value": "Citrine" },
+        { "key": "Sacral (Svadhisthana)", "value": "Carnelian" },
+        { "key": "Root (Muladhara)", "value": "Red Jasper" }
+      ]
+    },
+    {
+      "groupName": "Care & Usage",
+      "specs": [
+        { "key": "Cleansing", "value": "Moonlight, Sage Smoke, Sound" },
+        { "key": "Placement", "value": "Living Room, Office, Meditation Space" },
+        { "key": "Avoid", "value": "Direct sunlight, Moisture" }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq_01",
+      "question": "Are the crystals in this tree genuine?",
+      "answer": "Yes, every crystal tree uses 100% natural gemstones. Each tree comes with a certificate of authenticity and we source our stones directly from ethical mines in India and Brazil."
+    },
+    {
+      "id": "faq_02",
+      "question": "How do I cleanse and recharge the crystal tree?",
+      "answer": "You can cleanse your crystal tree by placing it under full moonlight overnight, using sage or palo santo smoke, or placing it near a singing bowl during sound healing. Avoid direct sunlight as some stones may fade."
+    },
+    {
+      "id": "faq_03",
+      "question": "Is this suitable as a gift?",
+      "answer": "Absolutely! Each crystal tree comes in a premium gift box with a meaning card explaining the seven chakras and their associated stones. It's a thoughtful and unique gift for housewarmings, weddings, or spiritual occasions."
+    },
+    {
+      "id": "faq_04",
+      "question": "What is the best Vastu placement for this tree?",
+      "answer": "For maximum benefit, place the crystal tree in the northeast corner (Ishan corner) of your home or office. This direction is considered the most auspicious for spiritual energy in Vastu Shastra."
+    },
+    {
+      "id": "faq_05",
+      "question": "Can I customize the base stone?",
+      "answer": "Yes! We offer three base stone options — Amethyst, Clear Quartz, and Rose Quartz. Select your preferred base from the variant options above."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_01",
+      "question": "Does this work for north-facing homes? I've read mixed opinions about crystal placement.",
+      "askedBy": "Priya M.",
+      "askedAt": "2026-01-15T10:30:00Z",
+      "answer": "Yes, the Seven Chakra tree is beneficial regardless of your home's facing direction. For north-facing homes, we recommend placing it in the living room's northeast area. The multi-chakra stones create a balanced energy field that complements any Vastu configuration.",
+      "answeredBy": "VastuCart Expert",
+      "answeredAt": "2026-01-15T14:00:00Z",
+      "isAdminAnswer": true
+    },
+    {
+      "id": "q_02",
+      "question": "How fragile is this? I'm worried about shipping damage.",
+      "askedBy": "Rahul K.",
+      "askedAt": "2026-01-22T08:15:00Z",
+      "answer": "We pack each tree with double-layer protection — foam insert and corrugated box. In 2+ years, our damage rate is under 0.5%. If anything does arrive damaged, we replace it immediately at no cost.",
+      "answeredBy": "VastuCart Expert",
+      "answeredAt": "2026-01-22T11:45:00Z",
+      "isAdminAnswer": true
+    },
+    {
+      "id": "q_03",
+      "question": "Can I keep this on my work desk? It's a small office cubicle.",
+      "askedBy": "Ananya S.",
+      "askedAt": "2026-02-01T16:20:00Z",
+      "answer": null,
+      "answeredBy": null,
+      "answeredAt": null,
+      "isAdminAnswer": false
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev_01",
+      "rating": 5,
+      "title": "Absolutely stunning piece — exceeded expectations",
+      "text": "I've been looking for a quality crystal tree for months and this one is perfect. The stones are genuine and vibrant, the wire work is meticulous, and the amethyst base is gorgeous. It's now the centerpiece of my meditation corner. The energy in the room genuinely feels different since I placed it there.",
+      "reviewerName": "Meera Sharma",
+      "reviewerLocation": "Jaipur, Rajasthan",
+      "isVerifiedPurchase": true,
+      "photos": [
+        "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80"
+      ],
+      "createdAt": "2026-01-28T09:00:00Z",
+      "variant": "Medium (10\") / Amethyst"
+    },
+    {
+      "id": "rev_02",
+      "rating": 4,
+      "title": "Beautiful but smaller than expected",
+      "text": "The quality is excellent and the crystals are real — you can tell by the weight and feel. My only slight disappointment is that 10 inches is smaller than I imagined from the photos. Still, it looks beautiful on my bookshelf. Would recommend the large size if you want a statement piece.",
+      "reviewerName": "Vikram Patel",
+      "reviewerLocation": "Mumbai, Maharashtra",
+      "isVerifiedPurchase": true,
+      "photos": [],
+      "createdAt": "2026-01-20T14:30:00Z",
+      "variant": "Medium (10\") / Amethyst"
+    },
+    {
+      "id": "rev_03",
+      "rating": 5,
+      "title": "Perfect housewarming gift",
+      "text": "Bought this as a housewarming gift for my sister. The gift box presentation was lovely and the meaning card was a nice touch. She was thrilled! The tree is well-made and the stones have good colour saturation. Will definitely buy more from VastuCart.",
+      "reviewerName": "Deepika Nair",
+      "reviewerLocation": "Kochi, Kerala",
+      "isVerifiedPurchase": true,
+      "photos": [
+        "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=400&q=80",
+        "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80"
+      ],
+      "createdAt": "2026-01-10T11:00:00Z",
+      "variant": "Medium (10\") / Clear Quartz"
+    },
+    {
+      "id": "rev_04",
+      "rating": 3,
+      "title": "Good quality, delivery was slow",
+      "text": "The crystal tree itself is nice — stones are genuine and the craftsmanship is decent. However, delivery took 8 days instead of the promised 3-5 days. Packaging was adequate but not premium. The tree is fine for the price point.",
+      "reviewerName": "Arjun Reddy",
+      "reviewerLocation": "Hyderabad, Telangana",
+      "isVerifiedPurchase": true,
+      "photos": [],
+      "createdAt": "2025-12-28T16:45:00Z",
+      "variant": "Small (6\") / Rose Quartz"
+    },
+    {
+      "id": "rev_05",
+      "rating": 5,
+      "title": "Third purchase from VastuCart — consistently great",
+      "text": "This is my third crystal tree from VastuCart and the quality remains top-notch. Each one I've purchased has had slightly different character in the stones which I love — proves they're natural. The large size is absolutely magnificent. Highly recommended for anyone into Vastu or crystal healing.",
+      "reviewerName": "Sunita Gupta",
+      "reviewerLocation": "Delhi",
+      "isVerifiedPurchase": true,
+      "photos": [
+        "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80"
+      ],
+      "createdAt": "2026-02-05T08:20:00Z",
+      "variant": "Large (14\") / Amethyst"
+    },
+    {
+      "id": "rev_06",
+      "rating": 4,
+      "title": "Lovely addition to my puja room",
+      "text": "Placed this in our puja room as suggested by our Vastu consultant. The colours are beautiful and it adds a serene feel to the space. Removing one star because a couple of the wire branches were slightly bent on arrival, but I straightened them easily.",
+      "reviewerName": "Kavita Joshi",
+      "reviewerLocation": "Pune, Maharashtra",
+      "isVerifiedPurchase": true,
+      "photos": [],
+      "createdAt": "2026-01-05T12:00:00Z",
+      "variant": "Medium (10\") / Amethyst"
+    }
+  ],
+  "ratingBreakdown": {
+    "average": 4.3,
+    "total": 147,
+    "distribution": {
+      "5": 89,
+      "4": 34,
+      "3": 14,
+      "2": 6,
+      "1": 4
+    }
+  },
+  "relatedProducts": [
+    {
+      "id": "prod_002",
+      "name": "Amethyst Crystal Tree",
+      "slug": "amethyst-crystal-tree",
+      "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+      "price": 1999,
+      "mrp": 3999,
+      "currency": "INR",
+      "rating": 4.5,
+      "reviewCount": 89,
+      "variantCount": 3,
+      "isNew": false,
+      "inStock": true
+    },
+    {
+      "id": "prod_003",
+      "name": "Rose Quartz Heart Bowl",
+      "slug": "rose-quartz-heart-bowl",
+      "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80",
+      "price": 899,
+      "mrp": 1499,
+      "currency": "INR",
+      "rating": 4.7,
+      "reviewCount": 203,
+      "variantCount": 1,
+      "isNew": true,
+      "inStock": true
+    },
+    {
+      "id": "prod_004",
+      "name": "Vastu Brass Tortoise",
+      "slug": "vastu-brass-tortoise",
+      "imageUrl": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=400&q=80",
+      "price": 1299,
+      "mrp": 2499,
+      "currency": "INR",
+      "rating": 4.2,
+      "reviewCount": 56,
+      "variantCount": 2,
+      "isNew": false,
+      "inStock": true
+    },
+    {
+      "id": "prod_005",
+      "name": "Crystal Pyramid Set",
+      "slug": "crystal-pyramid-set",
+      "imageUrl": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80",
+      "price": 3499,
+      "mrp": 5999,
+      "currency": "INR",
+      "rating": 4.6,
+      "reviewCount": 34,
+      "variantCount": 1,
+      "isNew": true,
+      "inStock": true
+    },
+    {
+      "id": "prod_006",
+      "name": "Selenite Charging Plate",
+      "slug": "selenite-charging-plate",
+      "imageUrl": "https://images.unsplash.com/photo-1602519093485-0630df691f68?w=400&q=80",
+      "price": 699,
+      "mrp": 999,
+      "currency": "INR",
+      "rating": 4.4,
+      "reviewCount": 112,
+      "variantCount": 2,
+      "isNew": false,
+      "inStock": false
+    }
+  ],
+  "breadcrumbs": [
+    { "label": "Home", "href": "/" },
+    { "label": "Crystals & Stones", "href": "/category/crystals-stones" },
+    { "label": "Crystal Trees", "href": "/category/crystals-stones/crystal-trees" },
+    { "label": "Seven Chakra Healing Crystal Tree", "href": null }
+  ]
+}

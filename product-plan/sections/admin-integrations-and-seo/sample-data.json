@@ -1,0 +1,113 @@
+{
+  "activeTab": "integrations",
+  "integrations": [
+    {
+      "id": "ga4",
+      "name": "Google Analytics 4",
+      "icon": "bar-chart-2",
+      "description": "Track website traffic, user behaviour, and conversion events with GA4.",
+      "isConnected": true,
+      "status": "active",
+      "configFields": {
+        "measurementId": "G-AB12CD34EF",
+        "streamId": "3456789012"
+      },
+      "lastSynced": null
+    },
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "icon": "eye",
+      "description": "Track conversions, optimise ads, and build audiences for Meta campaigns.",
+      "isConnected": true,
+      "status": "active",
+      "configFields": {
+        "pixelId": "123456789012345",
+        "conversionApiToken": "EAAGm...truncated"
+      },
+      "lastSynced": null
+    },
+    {
+      "id": "gmc",
+      "name": "Google Merchant Centre",
+      "icon": "shopping-bag",
+      "description": "Sync product feed for Google Shopping listings and free product listings.",
+      "isConnected": true,
+      "status": "active",
+      "configFields": {
+        "merchantId": "987654321",
+        "feedUrl": "https://vastucart.com/feeds/products.xml"
+      },
+      "lastSynced": "2026-02-14T08:30:00Z"
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp Business",
+      "icon": "message-circle",
+      "description": "Send order confirmations, shipping updates, and support messages via WhatsApp.",
+      "isConnected": false,
+      "status": "inactive",
+      "configFields": {
+        "phoneNumber": "",
+        "apiKey": ""
+      },
+      "lastSynced": null
+    },
+    {
+      "id": "chatwoot",
+      "name": "Chatwoot",
+      "icon": "headphones",
+      "description": "Live chat widget and helpdesk integration for customer support.",
+      "isConnected": true,
+      "status": "error",
+      "configFields": {
+        "websiteToken": "xKj8mN2pQ...",
+        "baseUrl": "https://app.chatwoot.com"
+      },
+      "lastSynced": "2026-02-13T22:15:00Z"
+    }
+  ],
+  "seoDefaults": {
+    "siteTitleTemplate": "%s | VastuCart — Vastu-Aligned Home & Living",
+    "metaDescription": "Shop Vastu-aligned home décor, furniture, and wellness products at VastuCart. Handpicked items to bring positive energy and harmony to every room.",
+    "robotsTxt": "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /cart/\nDisallow: /checkout/\nDisallow: /api/\n\nSitemap: https://vastucart.com/sitemap.xml",
+    "sitemapEnabled": true,
+    "sitemapLastGenerated": "2026-02-14T06:00:00Z"
+  },
+  "openGraph": {
+    "defaultImage": "https://vastucart.com/og/default-share.jpg",
+    "defaultTitle": "VastuCart — Vastu-Aligned Home & Living",
+    "defaultDescription": "Discover handpicked home décor and wellness products aligned with Vastu principles for positive energy in every space.",
+    "twitterHandle": "@vastucart"
+  },
+  "marketingTags": [
+    {
+      "id": "tag-ga4",
+      "name": "GA4 Page View",
+      "platform": "Google",
+      "pixelId": "G-AB12CD34EF",
+      "isActive": true
+    },
+    {
+      "id": "tag-meta-purchase",
+      "name": "Meta Purchase Event",
+      "platform": "Meta",
+      "pixelId": "123456789012345",
+      "isActive": true
+    },
+    {
+      "id": "tag-meta-atc",
+      "name": "Meta Add to Cart",
+      "platform": "Meta",
+      "pixelId": "123456789012345",
+      "isActive": true
+    },
+    {
+      "id": "tag-gmc-remarketing",
+      "name": "GMC Remarketing",
+      "platform": "Google",
+      "pixelId": "AW-987654321",
+      "isActive": false
+    }
+  ]
+}

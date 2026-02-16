@@ -1,0 +1,103 @@
+{
+  "programEnabled": true,
+  "config": {
+    "pointsPerRupee": 1,
+    "pointsPerDollar": 10,
+    "minRedemptionPoints": 100,
+    "pointsExpiryDays": 365,
+    "pointsValueINR": 0.25,
+    "pointsValueUSD": 0.01
+  },
+  "tiers": [
+    {
+      "id": "tier-1",
+      "name": "Bronze",
+      "minPoints": 0,
+      "multiplier": 1,
+      "benefits": ["Earn 1x points on all purchases", "Birthday bonus 50 points"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "tier-2",
+      "name": "Silver",
+      "minPoints": 500,
+      "multiplier": 1.5,
+      "benefits": ["Earn 1.5x points", "Free shipping on orders above ₹499", "Birthday bonus 100 points"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "tier-3",
+      "name": "Gold",
+      "minPoints": 2000,
+      "multiplier": 2,
+      "benefits": ["Earn 2x points", "Free shipping on all orders", "Early access to sales", "Birthday bonus 200 points"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "tier-4",
+      "name": "Platinum",
+      "minPoints": 5000,
+      "multiplier": 3,
+      "benefits": ["Earn 3x points", "Free express shipping", "Early access to new products", "Dedicated support", "Birthday bonus 500 points"],
+      "color": "#E5E4E2"
+    }
+  ],
+  "recentAdjustments": [
+    {
+      "id": "adj-1",
+      "customerName": "Priya Sharma",
+      "customerEmail": "priya.sharma@email.com",
+      "type": "credit",
+      "points": 500,
+      "reason": "Compensation for delayed delivery",
+      "adjustedBy": "Admin Ravi",
+      "date": "2026-02-12T10:30:00Z"
+    },
+    {
+      "id": "adj-2",
+      "customerName": "Arjun Patel",
+      "customerEmail": "arjun.patel@email.com",
+      "type": "debit",
+      "points": 200,
+      "reason": "Points correction — duplicate credit",
+      "adjustedBy": "Admin Meera",
+      "date": "2026-02-11T15:45:00Z"
+    },
+    {
+      "id": "adj-3",
+      "customerName": "Sneha Reddy",
+      "customerEmail": "sneha.r@email.com",
+      "type": "credit",
+      "points": 1000,
+      "reason": "Loyalty program migration bonus",
+      "adjustedBy": "Admin Ravi",
+      "date": "2026-02-10T09:00:00Z"
+    },
+    {
+      "id": "adj-4",
+      "customerName": "Vikram Singh",
+      "customerEmail": "vikram.singh@email.com",
+      "type": "credit",
+      "points": 250,
+      "reason": "Referral reward",
+      "adjustedBy": "Admin Meera",
+      "date": "2026-02-09T14:20:00Z"
+    },
+    {
+      "id": "adj-5",
+      "customerName": "Anita Desai",
+      "customerEmail": "anita.d@email.com",
+      "type": "debit",
+      "points": 100,
+      "reason": "Order cancellation — points reversal",
+      "adjustedBy": "Admin Ravi",
+      "date": "2026-02-08T11:10:00Z"
+    }
+  ],
+  "stats": {
+    "totalPointsIssued": 1250000,
+    "totalPointsRedeemed": 480000,
+    "totalPointsExpired": 95000,
+    "activeMembers": 3842
+  }
+}

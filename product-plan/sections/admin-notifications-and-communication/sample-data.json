@@ -1,0 +1,50 @@
+{
+  "activeChannel": "email",
+  "emailTemplates": [
+    { "id": "tpl-1", "name": "Order Confirmation", "subject": "Your VastuCart Order #{{order_id}} is Confirmed!", "description": "Sent immediately after successful payment", "isActive": true, "lastEdited": "2026-02-10", "triggerEvent": "order.confirmed" },
+    { "id": "tpl-2", "name": "Shipping Update", "subject": "Your Order #{{order_id}} Has Been Shipped", "description": "Sent when shipment is dispatched with tracking info", "isActive": true, "lastEdited": "2026-02-08", "triggerEvent": "order.shipped" },
+    { "id": "tpl-3", "name": "Delivery Confirmation", "subject": "Your Order #{{order_id}} Has Been Delivered", "description": "Sent upon delivery confirmation", "isActive": true, "lastEdited": "2026-01-28", "triggerEvent": "order.delivered" },
+    { "id": "tpl-4", "name": "Abandoned Cart", "subject": "You Left Something Behind at VastuCart", "description": "Sent 2 hours after cart abandonment", "isActive": true, "lastEdited": "2026-02-12", "triggerEvent": "cart.abandoned" },
+    { "id": "tpl-5", "name": "Welcome", "subject": "Welcome to VastuCart — Your Spiritual Journey Begins", "description": "Sent upon new account registration", "isActive": true, "lastEdited": "2026-01-15", "triggerEvent": "user.registered" },
+    { "id": "tpl-6", "name": "Password Reset", "subject": "Reset Your VastuCart Password", "description": "Sent when password reset is requested", "isActive": true, "lastEdited": "2026-01-20", "triggerEvent": "user.password_reset" }
+  ],
+  "smsConfig": {
+    "provider": "twilio",
+    "apiKey": "SK••••••••••••••••a3f7",
+    "senderId": "VASTUCART",
+    "isEnabled": true,
+    "templates": [
+      { "id": "sms-1", "name": "Order Confirmation", "template": "Your VastuCart order #{{order_id}} is confirmed! Total: ₹{{amount}}. Track at {{tracking_url}}", "triggerEvent": "order.confirmed", "isActive": true },
+      { "id": "sms-2", "name": "Shipping Update", "template": "Your VastuCart order #{{order_id}} has shipped! Track: {{tracking_url}}", "triggerEvent": "order.shipped", "isActive": true },
+      { "id": "sms-3", "name": "Delivery OTP", "template": "Your delivery OTP for order #{{order_id}} is {{otp}}. Do not share with anyone.", "triggerEvent": "order.delivery_otp", "isActive": true }
+    ]
+  },
+  "whatsappConfig": {
+    "provider": "whatsapp-business",
+    "phoneNumber": "+91 98765 43210",
+    "isEnabled": true,
+    "templates": [
+      { "id": "wa-1", "name": "Order Confirmation", "template": "Namaste! Your VastuCart order #{{order_id}} is confirmed. Amount: ₹{{amount}}. We'll notify you when it ships.", "triggerEvent": "order.confirmed", "isActive": true },
+      { "id": "wa-2", "name": "Shipping Update", "template": "Your VastuCart order #{{order_id}} is on its way! Track here: {{tracking_url}}", "triggerEvent": "order.shipped", "isActive": true },
+      { "id": "wa-3", "name": "Abandoned Cart Reminder", "template": "Hi {{name}}, you left items in your VastuCart. Complete your purchase: {{cart_url}}", "triggerEvent": "cart.abandoned", "isActive": false }
+    ]
+  },
+  "pushConfig": {
+    "isEnabled": true,
+    "vapidPublicKey": "BNbx••••••••••••••••••••••••••••qZ4w",
+    "templates": [
+      { "id": "push-1", "name": "Order Shipped", "template": "Your order #{{order_id}} has been shipped! Tap to track.", "triggerEvent": "order.shipped", "isActive": true },
+      { "id": "push-2", "name": "Flash Sale", "template": "Flash Sale! Up to 40% off on spiritual items. Shop now!", "triggerEvent": "promotion.flash_sale", "isActive": true },
+      { "id": "push-3", "name": "Back in Stock", "template": "{{product_name}} is back in stock! Get yours before it's gone.", "triggerEvent": "product.back_in_stock", "isActive": true }
+    ]
+  },
+  "inAppAnnouncements": [
+    { "id": "ann-1", "title": "Maha Shivaratri Sale", "message": "Get 25% off on all Shiva-related items this Maha Shivaratri. Use code SHIVA25.", "targetAudience": "all", "startDate": "2026-02-15", "endDate": "2026-02-17", "isActive": true, "type": "banner" },
+    { "id": "ann-2", "title": "New Collection: Navratri Specials", "message": "Explore our curated Navratri collection featuring sacred items for all nine days.", "targetAudience": "returning", "startDate": "2026-03-18", "endDate": "2026-03-27", "isActive": false, "type": "modal" },
+    { "id": "ann-3", "title": "Free Shipping Update", "message": "Free shipping on orders above ₹999!", "targetAudience": "all", "startDate": "2026-02-01", "endDate": "2026-03-31", "isActive": true, "type": "toast" }
+  ],
+  "integrations": {
+    "listmonk": { "url": "https://mail.vastucart.com", "isConnected": true },
+    "chatwoot": { "url": "https://chat.vastucart.com", "isConnected": true, "widgetToken": "cwt_••••••••x7b2" }
+  }
+}

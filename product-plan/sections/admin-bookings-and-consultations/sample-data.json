@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "models": {
+      "BookingRow": "A consultation booking with customer info, schedule, and status.",
+      "CalendarDay": "A day in the calendar view showing booking count and blocked status.",
+      "TimeSlotConfig": "Configuration for available booking time slots.",
+      "BlockedDate": "A date blocked from bookings with a reason."
+    }
+  },
+  "viewMode": "list",
+  "selectedDate": "2026-02-14",
+  "slotConfig": {
+    "enabledDays": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+    "startTime": "10:00",
+    "endTime": "18:00",
+    "slotDuration": 45,
+    "bufferMinutes": 15,
+    "maxBookingsPerDay": 8
+  },
+  "blockedDates": [
+    { "id": "bd-1", "date": "2026-02-26", "reason": "National holiday – Maha Shivaratri" },
+    { "id": "bd-2", "date": "2026-03-14", "reason": "Holi" },
+    { "id": "bd-3", "date": "2026-03-30", "reason": "Ugadi / Gudi Padwa" }
+  ],
+  "calendarDays": [
+    { "date": "2026-02-14", "bookingCount": 3, "isBlocked": false, "isToday": true },
+    { "date": "2026-02-15", "bookingCount": 2, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-16", "bookingCount": 1, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-17", "bookingCount": 4, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-18", "bookingCount": 0, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-19", "bookingCount": 2, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-20", "bookingCount": 0, "isBlocked": false, "isToday": false },
+    { "date": "2026-02-26", "bookingCount": 0, "isBlocked": true, "isToday": false }
+  ],
+  "bookings": [
+    {
+      "id": "bk-101", "customerName": "Priya Sharma", "customerEmail": "priya.sharma@example.com", "customerPhone": "+91 98765 43210",
+      "consultationType": "vastu_home", "date": "2026-02-14", "startTime": "10:00", "endTime": "10:45", "duration": 45,
+      "status": "confirmed", "meetingLink": "https://meet.google.com/abc-defg-hij",
+      "notes": "3BHK flat in Koramangala. Wants full Vastu analysis for all rooms."
+    },
+    {
+      "id": "bk-102", "customerName": "Rajesh Kumar", "customerEmail": "rajesh.k@example.com", "customerPhone": "+91 65432 10987",
+      "consultationType": "vastu_office", "date": "2026-02-14", "startTime": "11:00", "endTime": "11:45", "duration": 45,
+      "status": "confirmed", "meetingLink": "https://zoom.us/j/12345678",
+      "notes": "New office space in HSR Layout. Wants desk placement and entrance direction advice."
+    },
+    {
+      "id": "bk-103", "customerName": "Meera Joshi", "customerEmail": "meera.j@example.com", "customerPhone": "+91 54321 09876",
+      "consultationType": "general", "date": "2026-02-14", "startTime": "14:00", "endTime": "14:45", "duration": 45,
+      "status": "pending", "meetingLink": null,
+      "notes": ""
+    },
+    {
+      "id": "bk-104", "customerName": "Amit Patel", "customerEmail": "amit.patel@example.com", "customerPhone": "+91 87654 32109",
+      "consultationType": "vastu_plot", "date": "2026-02-15", "startTime": "10:00", "endTime": "10:45", "duration": 45,
+      "status": "pending", "meetingLink": null,
+      "notes": "New plot in Whitefield. Wants direction and gate placement guidance."
+    },
+    {
+      "id": "bk-105", "customerName": "Sunita Verma", "customerEmail": "sunita.v@example.com", "customerPhone": "+91 21098 76543",
+      "consultationType": "vastu_home", "date": "2026-02-15", "startTime": "15:00", "endTime": "15:45", "duration": 45,
+      "status": "confirmed", "meetingLink": "https://meet.google.com/xyz-uvwx-yz",
+      "notes": "Existing home renovation. Wants kitchen and puja room Vastu check."
+    },
+    {
+      "id": "bk-106", "customerName": "Deepika Menon", "customerEmail": "deepika.menon@example.com", "customerPhone": "+91 76543 21098",
+      "consultationType": "vastu_home", "date": "2026-02-10", "startTime": "11:00", "endTime": "11:45", "duration": 45,
+      "status": "completed", "meetingLink": "https://meet.google.com/old-meet-link",
+      "notes": "Completed. Sent follow-up PDF with recommendations. Customer very satisfied."
+    },
+    {
+      "id": "bk-107", "customerName": "Michael Chen", "customerEmail": "michael.c@example.com", "customerPhone": "+1 415-555-0198",
+      "consultationType": "general", "date": "2026-02-12", "startTime": "10:00", "endTime": "10:45", "duration": 45,
+      "status": "cancelled", "meetingLink": null,
+      "notes": "Customer cancelled due to scheduling conflict. Offered to reschedule."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "activeTab": "banners",
+  "banners": [
+    {
+      "id": "ban-001",
+      "name": "Diwali Sale 2026",
+      "headline": "Up to 40% Off on Vastu Essentials",
+      "ctaText": "Shop Now",
+      "ctaUrl": "https://vastucart.com/collections/diwali-sale",
+      "status": "live",
+      "isActive": true,
+      "startDate": "2026-10-15",
+      "endDate": "2026-11-05",
+      "priority": 1,
+      "productIds": ["prod-001", "prod-003"],
+      "productNames": ["Brass Kalash Set", "Copper Puja Thali"],
+      "creatives": [
+        { "ratio": "1:1", "imageUrl": "/banners/diwali-1x1.jpg", "width": 1080, "height": 1080 },
+        { "ratio": "16:9", "imageUrl": "/banners/diwali-16x9.jpg", "width": 1920, "height": 1080 },
+        { "ratio": "9:16", "imageUrl": "/banners/diwali-9x16.jpg", "width": 1080, "height": 1920 },
+        { "ratio": "16:3", "imageUrl": "/banners/diwali-16x3.jpg", "width": 1920, "height": 360 },
+        { "ratio": "4:3", "imageUrl": "/banners/diwali-4x3.jpg", "width": 1200, "height": 900 },
+        { "ratio": "2:3", "imageUrl": "/banners/diwali-2x3.jpg", "width": 1000, "height": 1500 }
+      ],
+      "placements": ["astro-hero", "blog-sidebar", "main-hero"],
+      "impressions": 24580,
+      "clicks": 1842,
+      "createdAt": "2026-10-10"
+    },
+    {
+      "id": "ban-002",
+      "name": "New Arrivals — Gemstones",
+      "headline": "Certified Natural Gemstones",
+      "ctaText": "Explore Collection",
+      "ctaUrl": "https://vastucart.com/collections/gemstones",
+      "status": "live",
+      "isActive": true,
+      "startDate": "2026-02-01",
+      "endDate": "2026-03-31",
+      "priority": 2,
+      "productIds": ["prod-012"],
+      "productNames": ["Yellow Sapphire Ring"],
+      "creatives": [
+        { "ratio": "1:1", "imageUrl": "/banners/gems-1x1.jpg", "width": 1080, "height": 1080 },
+        { "ratio": "16:9", "imageUrl": "/banners/gems-16x9.jpg", "width": 1920, "height": 1080 },
+        { "ratio": "2:3", "imageUrl": "/banners/gems-2x3.jpg", "width": 1000, "height": 1500 }
+      ],
+      "placements": ["astro-sidebar"],
+      "impressions": 8920,
+      "clicks": 534,
+      "createdAt": "2026-01-28"
+    },
+    {
+      "id": "ban-003",
+      "name": "Free Consultation Banner",
+      "headline": "Book Your Free Vastu Consultation",
+      "ctaText": "Book Now",
+      "ctaUrl": "https://vastucart.com/consultations",
+      "status": "scheduled",
+      "isActive": false,
+      "startDate": "2026-03-01",
+      "endDate": "2026-03-31",
+      "priority": 3,
+      "productIds": [],
+      "productNames": [],
+      "creatives": [
+        { "ratio": "16:9", "imageUrl": "/banners/consult-16x9.jpg", "width": 1920, "height": 1080 },
+        { "ratio": "16:3", "imageUrl": "/banners/consult-16x3.jpg", "width": 1920, "height": 360 }
+      ],
+      "placements": [],
+      "impressions": 0,
+      "clicks": 0,
+      "createdAt": "2026-02-12"
+    },
+    {
+      "id": "ban-004",
+      "name": "Navratri Collection",
+      "headline": "Sacred Puja Items for Navratri",
+      "ctaText": "View All",
+      "ctaUrl": "https://vastucart.com/collections/navratri",
+      "status": "expired",
+      "isActive": false,
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-15",
+      "priority": 1,
+      "productIds": ["prod-005", "prod-008"],
+      "productNames": ["Durga Idol", "Navratri Thali Set"],
+      "creatives": [
+        { "ratio": "1:1", "imageUrl": "/banners/navratri-1x1.jpg", "width": 1080, "height": 1080 },
+        { "ratio": "4:3", "imageUrl": "/banners/navratri-4x3.jpg", "width": 1200, "height": 900 }
+      ],
+      "placements": [],
+      "impressions": 31200,
+      "clicks": 2496,
+      "createdAt": "2025-09-25"
+    }
+  ],
+  "sites": [
+    {
+      "id": "site-main",
+      "subdomain": "vastucart.com",
+      "displayName": "Main Store",
+      "isActive": true,
+      "slots": [
+        { "id": "main-hero", "name": "Homepage Hero", "ratio": "16:9", "isActive": true, "currentBannerId": "ban-001", "currentBannerName": "Diwali Sale 2026" },
+        { "id": "main-strip", "name": "Header Strip", "ratio": "16:3", "isActive": true, "currentBannerId": null, "currentBannerName": null },
+        { "id": "main-sidebar", "name": "Sidebar Widget", "ratio": "1:1", "isActive": true, "currentBannerId": null, "currentBannerName": null }
+      ]
+    },
+    {
+      "id": "site-astro",
+      "subdomain": "astro.vastucart.com",
+      "displayName": "Astrology App",
+      "isActive": true,
+      "slots": [
+        { "id": "astro-hero", "name": "Hero Banner", "ratio": "16:9", "isActive": true, "currentBannerId": "ban-001", "currentBannerName": "Diwali Sale 2026" },
+        { "id": "astro-sidebar", "name": "Sidebar Widget", "ratio": "1:1", "isActive": true, "currentBannerId": "ban-002", "currentBannerName": "New Arrivals — Gemstones" },
+        { "id": "astro-footer", "name": "Post Footer", "ratio": "4:3", "isActive": true, "currentBannerId": null, "currentBannerName": null }
+      ]
+    },
+    {
+      "id": "site-blog",
+      "subdomain": "blog.vastucart.com",
+      "displayName": "Blog",
+      "isActive": true,
+      "slots": [
+        { "id": "blog-hero", "name": "Top Banner", "ratio": "16:9", "isActive": true, "currentBannerId": null, "currentBannerName": null },
+        { "id": "blog-sidebar", "name": "Sidebar", "ratio": "1:1", "isActive": true, "currentBannerId": "ban-001", "currentBannerName": "Diwali Sale 2026" },
+        { "id": "blog-between", "name": "Between Posts", "ratio": "4:3", "isActive": true, "currentBannerId": null, "currentBannerName": null }
+      ]
+    },
+    {
+      "id": "site-learn",
+      "subdomain": "learn.vastucart.com",
+      "displayName": "Learning Portal",
+      "isActive": true,
+      "slots": [
+        { "id": "learn-hero", "name": "Hero Banner", "ratio": "16:9", "isActive": true, "currentBannerId": null, "currentBannerName": null },
+        { "id": "learn-sidebar", "name": "Sidebar", "ratio": "1:1", "isActive": false, "currentBannerId": null, "currentBannerName": null }
+      ]
+    }
+  ],
+  "analytics": [
+    { "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "site": "vastucart.com", "impressions": 12400, "clicks": 1023, "ctr": 8.25, "period": "2026-02" },
+    { "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "site": "astro.vastucart.com", "impressions": 8200, "clicks": 574, "ctr": 7.0, "period": "2026-02" },
+    { "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "site": "blog.vastucart.com", "impressions": 3980, "clicks": 245, "ctr": 6.16, "period": "2026-02" },
+    { "bannerId": "ban-002", "bannerName": "New Arrivals — Gemstones", "site": "astro.vastucart.com", "impressions": 8920, "clicks": 534, "ctr": 5.99, "period": "2026-02" },
+    { "bannerId": "ban-004", "bannerName": "Navratri Collection", "site": "vastucart.com", "impressions": 18500, "clicks": 1554, "ctr": 8.4, "period": "2025-10" },
+    { "bannerId": "ban-004", "bannerName": "Navratri Collection", "site": "astro.vastucart.com", "impressions": 12700, "clicks": 942, "ctr": 7.42, "period": "2025-10" }
+  ],
+  "analyticsSummary": {
+    "totalImpressions": 64700,
+    "totalClicks": 4872,
+    "avgCtr": 7.53,
+    "activeBanners": 2
+  },
+  "socialAccounts": [
+    { "platform": "pinterest", "isConnected": true, "username": "vastucart_official", "displayName": "VastuCart", "preferredRatio": "2:3" },
+    { "platform": "instagram", "isConnected": true, "username": "vastucart.in", "displayName": "VastuCart India", "preferredRatio": "1:1" },
+    { "platform": "facebook", "isConnected": true, "username": "vastucart", "displayName": "VastuCart Store", "preferredRatio": "16:9" },
+    { "platform": "twitter", "isConnected": false, "username": "", "displayName": "", "preferredRatio": "16:9" },
+    { "platform": "threads", "isConnected": false, "username": "", "displayName": "", "preferredRatio": "1:1" }
+  ],
+  "socialPosts": [
+    { "id": "sp-001", "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "platform": "pinterest", "postUrl": "https://pinterest.com/pin/123456", "status": "published", "publishedAt": "2026-10-15T10:30:00Z", "caption": "Up to 40% Off on Vastu Essentials this Diwali! Shop brass kalash, copper thalis & more.", "meta": { "title": "Diwali Sale — VastuCart", "headline": "Up to 40% Off on Vastu Essentials", "description": "Shop authentic brass kalash, copper puja thalis and more at up to 40% off this Diwali.", "linkUrl": "https://vastucart.com/collections/diwali-sale", "ctaText": "Shop Now", "hashtags": "#diwali #vastucart #puja #homedecor", "altText": "Diwali sale banner with brass kalash and copper thali" } },
+    { "id": "sp-002", "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "platform": "instagram", "postUrl": "https://instagram.com/p/abc123", "status": "published", "publishedAt": "2026-10-15T11:00:00Z", "caption": "Diwali Sale is LIVE! Up to 40% off on vastu essentials. Link in bio.", "meta": { "title": "Diwali Sale", "headline": "Up to 40% Off", "description": "Vastu essentials for your Diwali celebrations.", "linkUrl": "https://vastucart.com/collections/diwali-sale", "ctaText": "Link in bio", "hashtags": "#diwali #sale #vastucart #puja #indianfestival", "altText": "Diwali sale promotional image" } },
+    { "id": "sp-003", "bannerId": "ban-001", "bannerName": "Diwali Sale 2026", "platform": "facebook", "postUrl": "https://facebook.com/vastucart/posts/789", "status": "published", "publishedAt": "2026-10-15T11:15:00Z", "caption": "Our biggest Diwali sale is here! Shop authentic vastu & puja items with up to 40% off.", "meta": { "title": "VastuCart Diwali Sale 2026", "headline": "Up to 40% Off on Vastu Essentials", "description": "Authentic brass, copper and spiritual items for your Diwali puja.", "linkUrl": "https://vastucart.com/collections/diwali-sale", "ctaText": "Shop Now", "hashtags": "#DiwaliSale #VastuCart", "altText": "Diwali sale banner" } },
+    { "id": "sp-004", "bannerId": "ban-002", "bannerName": "New Arrivals — Gemstones", "platform": "pinterest", "postUrl": "https://pinterest.com/pin/789012", "status": "published", "publishedAt": "2026-02-01T14:00:00Z", "caption": "Certified Natural Gemstones — Yellow Sapphire, Blue Sapphire & more. Shop now!", "meta": { "title": "Natural Gemstones — VastuCart", "headline": "Certified Natural Gemstones", "description": "Yellow Sapphire, Blue Sapphire, Emerald and more. Lab-certified, ethically sourced.", "linkUrl": "https://vastucart.com/collections/gemstones", "ctaText": "Explore Collection", "hashtags": "#gemstones #yellowsapphire #astrology #vastucart", "altText": "Collection of certified natural gemstones" } },
+    { "id": "sp-005", "bannerId": "ban-002", "bannerName": "New Arrivals — Gemstones", "platform": "instagram", "postUrl": "https://instagram.com/p/def456", "status": "published", "publishedAt": "2026-02-01T14:30:00Z", "caption": "New collection alert! Certified natural gemstones now available. Link in bio.", "meta": { "title": "New Gemstone Collection", "headline": "Certified Natural Gemstones", "description": "Lab-certified gemstones for astrology and personal use.", "linkUrl": "https://vastucart.com/collections/gemstones", "ctaText": "Link in bio", "hashtags": "#gemstones #newcollection #vastucart #astrology", "altText": "Gemstone collection display" } },
+    { "id": "sp-006", "bannerId": "ban-003", "bannerName": "Free Consultation Banner", "platform": "pinterest", "postUrl": "", "status": "pending", "publishedAt": "", "caption": "Book your free vastu consultation today!", "meta": { "title": "Free Vastu Consultation — VastuCart", "headline": "Book Your Free Vastu Consultation", "description": "Get expert vastu advice for your home or office from certified consultants.", "linkUrl": "https://vastucart.com/consultations", "ctaText": "Book Now", "hashtags": "#vastu #consultation #free #homedecor", "altText": "Vastu consultation booking banner" } },
+    { "id": "sp-007", "bannerId": "ban-003", "bannerName": "Free Consultation Banner", "platform": "facebook", "postUrl": "", "status": "pending", "publishedAt": "", "caption": "Get expert vastu advice — book a free consultation!", "meta": { "title": "Free Vastu Consultation", "headline": "Book Your Free Consultation", "description": "Expert vastu advice for home and office. Limited slots available.", "linkUrl": "https://vastucart.com/consultations", "ctaText": "Book Now", "hashtags": "#VastuConsultation #FreeAdvice", "altText": "Free consultation banner" } }
+  ]
+}

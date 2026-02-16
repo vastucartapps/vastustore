@@ -1,0 +1,245 @@
+{
+  "_meta": {
+    "models": {
+      "OrderRow": "Summary order row displayed in the orders data table.",
+      "OrderDetail": "Full order with items, customer, shipping, payment, timeline, and notes.",
+      "TimelineEvent": "A status change event in the order's lifecycle.",
+      "OrderNote": "An internal admin note on an order."
+    },
+    "relationships": [
+      "OrderDetail contains OrderItems, TimelineEvents, OrderNotes, OrderCustomer, ShippingAddress, and PaymentDetails.",
+      "OrderRow is a summary view of OrderDetail for the table."
+    ]
+  },
+  "filters": {
+    "search": "",
+    "status": "all",
+    "datePreset": "30days",
+    "dateFrom": "",
+    "dateTo": "",
+    "sortField": "date",
+    "sortDirection": "desc"
+  },
+  "pagination": {
+    "page": 1,
+    "perPage": 10,
+    "totalItems": 48,
+    "totalPages": 5
+  },
+  "orders": [
+    {
+      "id": "ord-2401",
+      "orderNumber": "VC-20260214-2401",
+      "customerName": "Priya Sharma",
+      "customerEmail": "priya.sharma@example.com",
+      "itemCount": 3,
+      "total": 4599,
+      "currency": "INR",
+      "status": "processing",
+      "paymentMethod": "razorpay",
+      "paymentStatus": "paid",
+      "date": "2026-02-14T10:23:00Z"
+    },
+    {
+      "id": "ord-2400",
+      "orderNumber": "VC-20260214-2400",
+      "customerName": "Amit Patel",
+      "customerEmail": "amit.patel@example.com",
+      "itemCount": 2,
+      "total": 8750,
+      "currency": "INR",
+      "status": "accepted",
+      "paymentMethod": "upi",
+      "paymentStatus": "paid",
+      "date": "2026-02-14T09:45:00Z"
+    },
+    {
+      "id": "ord-2399",
+      "orderNumber": "VC-20260213-2399",
+      "customerName": "Sarah Miller",
+      "customerEmail": "sarah.m@example.com",
+      "itemCount": 1,
+      "total": 62,
+      "currency": "USD",
+      "status": "shipped",
+      "paymentMethod": "stripe",
+      "paymentStatus": "paid",
+      "date": "2026-02-13T22:10:00Z"
+    },
+    {
+      "id": "ord-2398",
+      "orderNumber": "VC-20260213-2398",
+      "customerName": "Deepika Menon",
+      "customerEmail": "deepika.menon@example.com",
+      "itemCount": 5,
+      "total": 12300,
+      "currency": "INR",
+      "status": "processing",
+      "paymentMethod": "razorpay",
+      "paymentStatus": "paid",
+      "date": "2026-02-13T18:30:00Z"
+    },
+    {
+      "id": "ord-2397",
+      "orderNumber": "VC-20260213-2397",
+      "customerName": "Rajesh Kumar",
+      "customerEmail": "rajesh.k@example.com",
+      "itemCount": 1,
+      "total": 3200,
+      "currency": "INR",
+      "status": "delivered",
+      "paymentMethod": "cod",
+      "paymentStatus": "paid",
+      "date": "2026-02-13T14:05:00Z"
+    },
+    {
+      "id": "ord-2396",
+      "orderNumber": "VC-20260212-2396",
+      "customerName": "Meera Joshi",
+      "customerEmail": "meera.j@example.com",
+      "itemCount": 4,
+      "total": 6450,
+      "currency": "INR",
+      "status": "out_for_delivery",
+      "paymentMethod": "razorpay",
+      "paymentStatus": "paid",
+      "date": "2026-02-12T11:20:00Z"
+    },
+    {
+      "id": "ord-2395",
+      "orderNumber": "VC-20260212-2395",
+      "customerName": "John Davis",
+      "customerEmail": "john.d@example.com",
+      "itemCount": 2,
+      "total": 89,
+      "currency": "USD",
+      "status": "in_transit",
+      "paymentMethod": "stripe",
+      "paymentStatus": "paid",
+      "date": "2026-02-12T08:50:00Z"
+    },
+    {
+      "id": "ord-2394",
+      "orderNumber": "VC-20260211-2394",
+      "customerName": "Kavita Singh",
+      "customerEmail": "kavita.s@example.com",
+      "itemCount": 1,
+      "total": 1899,
+      "currency": "INR",
+      "status": "cancelled",
+      "paymentMethod": "razorpay",
+      "paymentStatus": "refunded",
+      "date": "2026-02-11T16:40:00Z"
+    },
+    {
+      "id": "ord-2393",
+      "orderNumber": "VC-20260211-2393",
+      "customerName": "Ananya Reddy",
+      "customerEmail": "ananya.r@example.com",
+      "itemCount": 3,
+      "total": 5670,
+      "currency": "INR",
+      "status": "returned",
+      "paymentMethod": "netbanking",
+      "paymentStatus": "refunded",
+      "date": "2026-02-11T10:15:00Z"
+    },
+    {
+      "id": "ord-2392",
+      "orderNumber": "VC-20260210-2392",
+      "customerName": "Michael Chen",
+      "customerEmail": "michael.c@example.com",
+      "itemCount": 1,
+      "total": 45,
+      "currency": "USD",
+      "status": "delivered",
+      "paymentMethod": "stripe",
+      "paymentStatus": "paid",
+      "date": "2026-02-10T20:30:00Z"
+    }
+  ],
+  "orderDetail": {
+    "id": "ord-2401",
+    "orderNumber": "VC-20260214-2401",
+    "status": "processing",
+    "customer": {
+      "id": "cust-101",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "phone": "+91 98765 43210",
+      "totalOrders": 12
+    },
+    "shippingAddress": {
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "street": "42, Lotus Colony, Koramangala 4th Block",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560034",
+      "country": "India"
+    },
+    "payment": {
+      "method": "razorpay",
+      "status": "paid",
+      "transactionId": "pay_NxK7gH2mBvQ9Rr",
+      "amount": 4599,
+      "currency": "INR",
+      "paidAt": "2026-02-14T10:24:15Z"
+    },
+    "items": [
+      {
+        "id": "item-1",
+        "productName": "Brass Ganesha Idol – Medium",
+        "variantLabel": "Medium (6 inch)",
+        "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=100&h=100&fit=crop",
+        "quantity": 1,
+        "price": 2499,
+        "lineTotal": 2499,
+        "currency": "INR"
+      },
+      {
+        "id": "item-2",
+        "productName": "Sandalwood Incense Sticks – 100 Pack",
+        "variantLabel": "Standard",
+        "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=100&h=100&fit=crop",
+        "quantity": 2,
+        "price": 399,
+        "lineTotal": 798,
+        "currency": "INR"
+      },
+      {
+        "id": "item-3",
+        "productName": "Camphor Tablets – Pack of 50",
+        "variantLabel": "Pack of 50",
+        "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=100&h=100&fit=crop",
+        "quantity": 1,
+        "price": 249,
+        "lineTotal": 249,
+        "currency": "INR"
+      }
+    ],
+    "timeline": [
+      { "id": "tl-1", "status": "processing", "label": "Order Placed", "timestamp": "2026-02-14T10:23:00Z", "note": "Payment confirmed via Razorpay", "isCompleted": true, "isCurrent": true },
+      { "id": "tl-2", "status": "accepted", "label": "Order Accepted", "timestamp": null, "note": null, "isCompleted": false, "isCurrent": false },
+      { "id": "tl-3", "status": "shipped", "label": "Shipped", "timestamp": null, "note": null, "isCompleted": false, "isCurrent": false },
+      { "id": "tl-4", "status": "in_transit", "label": "In Transit", "timestamp": null, "note": null, "isCompleted": false, "isCurrent": false },
+      { "id": "tl-5", "status": "out_for_delivery", "label": "Out for Delivery", "timestamp": null, "note": null, "isCompleted": false, "isCurrent": false },
+      { "id": "tl-6", "status": "delivered", "label": "Delivered", "timestamp": null, "note": null, "isCompleted": false, "isCurrent": false }
+    ],
+    "notes": [
+      { "id": "note-1", "author": "Admin", "message": "Customer requested gift wrapping. Instructed warehouse team.", "createdAt": "2026-02-14T10:30:00Z" },
+      { "id": "note-2", "author": "Warehouse", "message": "Gift wrap added. Ready for dispatch.", "createdAt": "2026-02-14T11:15:00Z" }
+    ],
+    "subtotal": 3546,
+    "discount": 0,
+    "shippingFee": 99,
+    "tax": 954,
+    "total": 4599,
+    "currency": "INR",
+    "trackingNumber": null,
+    "trackingUrl": null,
+    "carrier": null,
+    "createdAt": "2026-02-14T10:23:00Z",
+    "updatedAt": "2026-02-14T11:15:00Z"
+  }
+}

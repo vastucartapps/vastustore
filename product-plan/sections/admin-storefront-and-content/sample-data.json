@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "models": {
+      "Announcement": "Announcement ribbon displayed at the top of the storefront with scheduling support.",
+      "Branding": "Store identity settings including name, logo, favicon, and contact info.",
+      "HomepageSection": "A configurable section on the storefront homepage with ordering and visibility.",
+      "ContentPage": "A static content page such as About, Privacy, Terms, etc.",
+      "FooterConfig": "Footer layout with link columns, copyright, and social links toggle."
+    },
+    "relationships": [
+      "HomepageSections are ordered by their order field.",
+      "FooterConfig contains multiple FooterColumns, each with FooterLinks.",
+      "ContentPages are standalone static pages."
+    ]
+  },
+  "announcement": {
+    "message": "Free shipping on orders above \u20b9999! Use code VASTU10 for 10% off.",
+    "linkText": "Shop Now",
+    "linkUrl": "/collections/best-sellers",
+    "bgColor": "#013f47",
+    "textColor": "#ffffff",
+    "isActive": true,
+    "schedule": {
+      "startDate": "2026-02-01",
+      "endDate": "2026-03-15"
+    }
+  },
+  "branding": {
+    "storeName": "VastuCart",
+    "tagline": "Sacred Essentials for Your Spiritual Journey",
+    "contactEmail": "support@vastucart.com",
+    "contactPhone": "+91 98765 43210",
+    "address": "42 Temple Lane, Varanasi, Uttar Pradesh 221001, India",
+    "logoUrl": "/images/vastucart-logo.png",
+    "faviconUrl": "/images/vastucart-favicon.png"
+  },
+  "homepageSections": [
+    { "id": "hs-1", "name": "Hero Banner", "type": "hero", "enabled": true, "order": 1 },
+    { "id": "hs-2", "name": "Shop by Category", "type": "categories", "enabled": true, "order": 2 },
+    { "id": "hs-3", "name": "Featured Products", "type": "featured", "enabled": true, "order": 3 },
+    { "id": "hs-4", "name": "New Arrivals", "type": "new_arrivals", "enabled": true, "order": 4 },
+    { "id": "hs-5", "name": "Bestsellers", "type": "bestsellers", "enabled": true, "order": 5 },
+    { "id": "hs-6", "name": "Deals & Offers", "type": "deals", "enabled": false, "order": 6 },
+    { "id": "hs-7", "name": "Customer Testimonials", "type": "testimonials", "enabled": true, "order": 7 },
+    { "id": "hs-8", "name": "Newsletter Signup", "type": "newsletter", "enabled": true, "order": 8 }
+  ],
+  "contentPages": [
+    { "id": "cp-1", "title": "About Us", "slug": "about", "lastUpdated": "2026-01-20", "isPublished": true, "excerpt": "Learn about VastuCart's mission to bring authentic spiritual products to every home." },
+    { "id": "cp-2", "title": "Contact Us", "slug": "contact", "lastUpdated": "2026-01-18", "isPublished": true, "excerpt": "Get in touch with our team for support, wholesale inquiries, or feedback." },
+    { "id": "cp-3", "title": "Privacy Policy", "slug": "privacy-policy", "lastUpdated": "2025-12-01", "isPublished": true, "excerpt": "How we collect, use, and protect your personal information." },
+    { "id": "cp-4", "title": "Terms & Conditions", "slug": "terms", "lastUpdated": "2025-12-01", "isPublished": true, "excerpt": "Terms governing your use of the VastuCart platform and purchases." },
+    { "id": "cp-5", "title": "Shipping Policy", "slug": "shipping-policy", "lastUpdated": "2026-01-10", "isPublished": true, "excerpt": "Delivery timelines, charges, and shipping partners for all orders." },
+    { "id": "cp-6", "title": "Refund & Returns", "slug": "refund-returns", "lastUpdated": "2026-01-10", "isPublished": true, "excerpt": "Our hassle-free return and refund process for damaged or incorrect items." }
+  ],
+  "footerConfig": {
+    "columns": [
+      {
+        "title": "Quick Links",
+        "links": [
+          { "label": "Home", "url": "/" },
+          { "label": "All Products", "url": "/collections" },
+          { "label": "Best Sellers", "url": "/collections/best-sellers" },
+          { "label": "New Arrivals", "url": "/collections/new-arrivals" }
+        ]
+      },
+      {
+        "title": "Customer Care",
+        "links": [
+          { "label": "Contact Us", "url": "/contact" },
+          { "label": "Shipping Policy", "url": "/shipping-policy" },
+          { "label": "Refund & Returns", "url": "/refund-returns" },
+          { "label": "FAQs", "url": "/faqs" }
+        ]
+      },
+      {
+        "title": "About",
+        "links": [
+          { "label": "Our Story", "url": "/about" },
+          { "label": "Privacy Policy", "url": "/privacy-policy" },
+          { "label": "Terms & Conditions", "url": "/terms" },
+          { "label": "Blog", "url": "/blog" }
+        ]
+      }
+    ],
+    "copyrightText": "\u00a9 2026 VastuCart. All rights reserved.",
+    "showSocialLinks": true
+  }
+}

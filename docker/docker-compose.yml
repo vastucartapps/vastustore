@@ -1,0 +1,99 @@
+version: "3.8"
+
+services:
+  # PostgreSQL for Next.js app (Prisma)
+  postgres-app:
+    image: postgres:15-alpine
+    container_name: vastucart-app-db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vastucart_app
+    volumes:
+      - postgres_app_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vastucart
+
+  # PostgreSQL for Medusa
+  postgres-medusa:
+    image: postgres:15-alpine
+    container_name: vastucart-medusa-db
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medusa_db
+    volumes:
+      - postgres_medusa_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vastucart
+
+  # Redis (shared)
+  redis:
+    image: redis:7-alpine
+    container_name: vastucart-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - vastucart
+
+  # Medusa v2 Backend
+  medusa-backend:
+    image: medusajs/medusa:latest
+    container_name: vastucart-medusa
+    depends_on:
+      postgres-medusa:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "9000:9000"
+    environment:
+      # Database
+      DATABASE_TYPE: postgres
+      DATABASE_URL: postgresql://postgres:postgres@postgres-medusa:5432/medusa_db
+
+      # Redis
+      REDIS_URL: redis://redis:6379
+
+      # JWT Secret (generate a random secret for production)
+      JWT_SECRET: supersecret-change-in-production
+      COOKIE_SECRET: supersecret-change-in-production
+
+      # Admin CORS
+      ADMIN_CORS: http://localhost:3000,http://localhost:9000
+      STORE_CORS: http://localhost:3000
+
+      # Node environment
+      NODE_ENV: development
+
+      # Medusa backend URL
+      MEDUSA_BACKEND_URL: http://localhost:9000
+    networks:
+      - vastucart
+    restart: unless-stopped
+
+volumes:
+  postgres_app_data:
+  postgres_medusa_data:
+  redis_data:
+
+networks:
+  vastucart:
+    driver: bridge

@@ -1,0 +1,178 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Extended user profile — links to AstroEngine auth user by UUID
+model Profile {
+  id               String   @id @default(uuid())
+  userId           String   @unique @map("user_id") // UUID from AstroEngine auth
+  phone            String?
+  phoneCountryCode String   @default("+91") @map("phone_country_code")
+  avatarUrl        String?  @map("avatar_url")
+  defaultCurrency  String   @default("INR") @map("default_currency")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  addresses     Address[]
+  wishlistItems WishlistItem[]
+  loyaltyBalance LoyaltyBalance?
+  loyaltyTransactions LoyaltyTransaction[]
+  bookings      Booking[]
+  notifications Notification[]
+
+  @@map("profiles")
+}
+
+model Address {
+  id        String   @id @default(uuid())
+  profileId String   @map("profile_id")
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  name      String
+  phone     String
+  street    String
+  city      String
+  state     String
+  pincode   String
+  country   String   @default("India")
+  isDefault Boolean  @default(false) @map("is_default")
+  label     String   @default("Home") // 'Home' | 'Office' | 'Other'
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("addresses")
+}
+
+model WishlistItem {
+  id                   String   @id @default(uuid())
+  profileId            String   @map("profile_id")
+  profile              Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  productId            String   @map("product_id")   // Medusa product ID
+  variantId            String?  @map("variant_id")    // Medusa variant ID
+  notifyBackInStock    Boolean  @default(false) @map("notify_back_in_stock")
+  createdAt            DateTime @default(now()) @map("created_at")
+
+  @@unique([profileId, productId])
+  @@map("wishlist_items")
+}
+
+model LoyaltyBalance {
+  id               String   @id @default(uuid())
+  profileId        String   @unique @map("profile_id")
+  profile          Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  points           Int      @default(0)
+  lifetimeEarned   Int      @default(0) @map("lifetime_earned")
+  lifetimeRedeemed Int      @default(0) @map("lifetime_redeemed")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  @@map("loyalty_balances")
+}
+
+model LoyaltyTransaction {
+  id          String   @id @default(uuid())
+  profileId   String   @map("profile_id")
+  profile     Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  type        String   // 'earned' | 'redeemed' | 'adjusted'
+  points      Int
+  description String
+  orderId     String?  @map("order_id") // Medusa order ID if applicable
+  balance     Int      // Running balance after this transaction
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("loyalty_transactions")
+}
+
+model Booking {
+  id             String   @id @default(uuid())
+  profileId      String   @map("profile_id")
+  profile        Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  title          String
+  date           DateTime
+  time           String
+  duration       Int      @default(30) // minutes
+  status         String   @default("pending") // 'pending' | 'confirmed' | 'completed' | 'cancelled'
+  meetingLink    String?  @map("meeting_link")
+  consultantName String?  @map("consultant_name")
+  price          Float
+  currency       String   @default("INR")
+  notes          String?
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("bookings")
+}
+
+model TimeSlot {
+  id        String   @id @default(uuid())
+  dayOfWeek Int      @map("day_of_week") // 0=Sun, 6=Sat
+  startTime String   @map("start_time")  // "09:00"
+  endTime   String   @map("end_time")    // "17:00"
+  duration  Int      @default(30)        // minutes
+  buffer    Int      @default(15)        // minutes between slots
+  isActive  Boolean  @default(true) @map("is_active")
+
+  @@map("time_slots")
+}
+
+model BlockedDate {
+  id     String   @id @default(uuid())
+  date   DateTime
+  reason String?
+
+  @@map("blocked_dates")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  profileId String   @map("profile_id")
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  type      String   // 'order' | 'promotion' | 'stock' | 'loyalty'
+  title     String
+  message   String
+  isRead    Boolean  @default(false) @map("is_read")
+  link      String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("notifications")
+}
+
+model Announcement {
+  id        String    @id @default(uuid())
+  text      String
+  bgColor   String    @default("#013f47") @map("bg_color")
+  textColor String    @default("#ffffff") @map("text_color")
+  link      String?
+  isActive  Boolean   @default(true) @map("is_active")
+  startDate DateTime? @map("start_date")
+  endDate   DateTime? @map("end_date")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@map("announcements")
+}
+
+model ContentPage {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  contentHtml String   @map("content_html") @db.Text
+  isPublished Boolean  @default(true) @map("is_published")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("content_pages")
+}
+
+model StoreConfig {
+  id    String @id @default(uuid())
+  key   String @unique
+  value Json
+
+  @@map("store_config")
+}
+
+// Additional tables (banner_ads, ecosystem_sites, social_posts, footer_config)
+// will be added as we implement admin sections 18-22

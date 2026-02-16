@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "models": {
+      "CouponRow": "A coupon with discount rules shown in the coupons table.",
+      "GiftCardRow": "A gift card with balance info.",
+      "GiftCardTransaction": "A credit/debit transaction on a gift card."
+    }
+  },
+  "activeTab": "coupons",
+  "couponStatusFilter": "all",
+  "searchQuery": "",
+  "coupons": [
+    { "id": "cpn-1", "code": "WELCOME20", "discountType": "percentage", "discountValue": 20, "minOrder": 999, "maxDiscount": 500, "currency": "INR", "startDate": "2026-01-01", "endDate": "2026-12-31", "usageLimit": null, "usageLimitPerCustomer": 1, "usedCount": 89, "status": "active", "targetType": "all", "targetNames": [] },
+    { "id": "cpn-2", "code": "VALENTINE50", "discountType": "flat", "discountValue": 500, "minOrder": 2000, "maxDiscount": null, "currency": "INR", "startDate": "2026-02-10", "endDate": "2026-02-16", "usageLimit": 200, "usageLimitPerCustomer": 1, "usedCount": 147, "status": "active", "targetType": "all", "targetNames": [] },
+    { "id": "cpn-3", "code": "IDOL15", "discountType": "percentage", "discountValue": 15, "minOrder": 1499, "maxDiscount": 1000, "currency": "INR", "startDate": "2026-01-15", "endDate": "2026-03-31", "usageLimit": 500, "usageLimitPerCustomer": 3, "usedCount": 62, "status": "active", "targetType": "categories", "targetNames": ["Idols & Statues"] },
+    { "id": "cpn-4", "code": "DIWALI30", "discountType": "percentage", "discountValue": 30, "minOrder": 500, "maxDiscount": 2000, "currency": "INR", "startDate": "2025-10-15", "endDate": "2025-11-15", "usageLimit": 1000, "usageLimitPerCustomer": 2, "usedCount": 834, "status": "expired", "targetType": "all", "targetNames": [] },
+    { "id": "cpn-5", "code": "FLAT200", "discountType": "flat", "discountValue": 200, "minOrder": 1000, "maxDiscount": null, "currency": "INR", "startDate": "2025-12-01", "endDate": "2026-01-31", "usageLimit": 100, "usageLimitPerCustomer": 1, "usedCount": 100, "status": "expired", "targetType": "all", "targetNames": [] },
+    { "id": "cpn-6", "code": "RUDRAKSHA10", "discountType": "percentage", "discountValue": 10, "minOrder": null, "maxDiscount": 300, "currency": "INR", "startDate": "2026-02-01", "endDate": "2026-04-30", "usageLimit": null, "usageLimitPerCustomer": 5, "usedCount": 12, "status": "disabled", "targetType": "categories", "targetNames": ["Rudraksha & Malas"] },
+    { "id": "cpn-7", "code": "USD10OFF", "discountType": "flat", "discountValue": 10, "minOrder": 50, "maxDiscount": null, "currency": "USD", "startDate": "2026-01-01", "endDate": "2026-06-30", "usageLimit": 50, "usageLimitPerCustomer": 1, "usedCount": 8, "status": "active", "targetType": "all", "targetNames": [] }
+  ],
+  "giftCards": [
+    { "id": "gc-1", "code": "GC-PRIYA-5000", "initialBalance": 5000, "currentBalance": 2300, "currency": "INR", "status": "active", "expiresAt": "2027-02-14", "createdAt": "2026-02-14T10:00:00Z" },
+    { "id": "gc-2", "code": "GC-DIWALI-2000", "initialBalance": 2000, "currentBalance": 2000, "currency": "INR", "status": "active", "expiresAt": "2026-11-15", "createdAt": "2025-11-01T09:00:00Z" },
+    { "id": "gc-3", "code": "GC-BDAY-1000", "initialBalance": 1000, "currentBalance": 0, "currency": "INR", "status": "depleted", "expiresAt": "2026-08-20", "createdAt": "2025-08-20T12:00:00Z" },
+    { "id": "gc-4", "code": "GC-USD-50", "initialBalance": 50, "currentBalance": 35, "currency": "USD", "status": "active", "expiresAt": null, "createdAt": "2026-01-10T14:00:00Z" },
+    { "id": "gc-5", "code": "GC-XMAS-3000", "initialBalance": 3000, "currentBalance": 3000, "currency": "INR", "status": "inactive", "expiresAt": "2026-12-25", "createdAt": "2025-12-20T08:00:00Z" }
+  ],
+  "editingCoupon": null,
+  "giftCardDetail": {
+    "id": "gc-1",
+    "code": "GC-PRIYA-5000",
+    "initialBalance": 5000,
+    "currentBalance": 2300,
+    "currency": "INR",
+    "status": "active",
+    "expiresAt": "2027-02-14",
+    "createdAt": "2026-02-14T10:00:00Z",
+    "customerName": "Priya Sharma",
+    "customerEmail": "priya.sharma@example.com",
+    "transactions": [
+      { "id": "txn-1", "type": "credit", "amount": 5000, "currency": "INR", "description": "Gift card created", "orderId": null, "date": "2026-02-14T10:00:00Z" },
+      { "id": "txn-2", "type": "debit", "amount": 1500, "currency": "INR", "description": "Order VC-20260214-2401", "orderId": "ord-2401", "date": "2026-02-14T10:24:00Z" },
+      { "id": "txn-3", "type": "debit", "amount": 1200, "currency": "INR", "description": "Order VC-20260214-2405", "orderId": "ord-2405", "date": "2026-02-14T15:30:00Z" }
+    ]
+  }
+}

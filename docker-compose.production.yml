@@ -1,0 +1,119 @@
+version: "3.8"
+
+services:
+  # PostgreSQL Database (Persistent)
+  postgres:
+    image: postgres:15-alpine
+    container_name: vastucart-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespass}
+      POSTGRES_DB: vastucart_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vastucart-network
+    restart: unless-stopped
+
+  # Redis (for Medusa caching)
+  redis:
+    image: redis:7-alpine
+    container_name: vastucart-redis
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vastucart-network
+    restart: unless-stopped
+
+  # Medusa v2 Backend
+  medusa:
+    image: medusajs/medusa:latest
+    container_name: vastucart-medusa
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      # Database
+      DATABASE_TYPE: postgres
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgrespass}@postgres:5432/vastucart_db
+
+      # Redis
+      REDIS_URL: redis://redis:6379
+
+      # JWT & Cookie Secrets
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      COOKIE_SECRET: ${COOKIE_SECRET:-change-me-in-production}
+
+      # CORS
+      ADMIN_CORS: ${ADMIN_CORS:-http://localhost:3000,https://store.vastucart.in}
+      STORE_CORS: ${STORE_CORS:-http://localhost:3000,https://store.vastucart.in}
+
+      # URLs
+      MEDUSA_BACKEND_URL: ${MEDUSA_BACKEND_URL:-https://store.vastucart.in}
+
+      # Node Environment
+      NODE_ENV: production
+    ports:
+      - "9000:9000"
+    networks:
+      - vastucart-network
+    restart: unless-stopped
+    command: >
+      sh -c "medusa migrations run && medusa start"
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: vastucart-frontend
+    depends_on:
+      - postgres
+      - medusa
+    environment:
+      # Medusa Configuration
+      NEXT_PUBLIC_MEDUSA_API_URL: http://medusa:9000
+      MEDUSA_ADMIN_API_KEY: ${MEDUSA_ADMIN_API_KEY}
+
+      # AstroEngine Auth
+      NEXT_PUBLIC_ASTRO_API_URL: https://api.vastucart.in/api/v1
+
+      # Supabase (Optional)
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+
+      # App Database (Prisma)
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgrespass}@postgres:5432/vastucart_db
+
+      # Application
+      NEXT_PUBLIC_APP_URL: https://store.vastucart.in
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    networks:
+      - vastucart-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  vastucart-network:
+    driver: bridge

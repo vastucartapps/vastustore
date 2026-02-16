@@ -1,0 +1,649 @@
+{
+  "_meta": {
+    "models": {
+      "userProfile": "The logged-in customer's profile with personal info, avatar, and account metadata.",
+      "dashboardStats": "Quick-stat numbers for the dashboard home view.",
+      "order": "A placed order with items, status, payment, shipping, and tracking details.",
+      "orderItem": "A line item within an order referencing a product variant.",
+      "orderTimelineStep": "A step in the order tracking timeline with status and timestamp.",
+      "address": "A saved shipping or billing address.",
+      "wishlistItem": "A product saved to the customer's wishlist with stock and pricing info.",
+      "coupon": "An available or expired discount coupon for the customer.",
+      "loyaltyBalance": "The customer's current loyalty points balance and earn rate.",
+      "loyaltyTransaction": "A single earn or redeem event in the loyalty history.",
+      "booking": "A consultation appointment with date, time, status, and meeting link.",
+      "giftCard": "A gift card with code, balance, and expiry.",
+      "notification": "An in-app notification with type, message, read status, and link.",
+      "supportInfo": "Store contact details and FAQ links for the support section."
+    },
+    "relationships": [
+      "User has one UserProfile",
+      "User has many Order, each Order has many OrderItem and OrderTimelineStep",
+      "User has many Address",
+      "User has many WishlistItem referencing products",
+      "User has many Coupon (available to them)",
+      "User has one LoyaltyBalance with many LoyaltyTransaction",
+      "User has many Booking",
+      "User has many GiftCard",
+      "User has many Notification"
+    ]
+  },
+  "userProfile": {
+    "id": "usr_01",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@email.com",
+    "emailVerified": true,
+    "phone": "+91 98765 43210",
+    "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+    "memberSince": "2025-06-15T00:00:00Z",
+    "currency": "INR"
+  },
+  "dashboardStats": {
+    "totalOrders": 12,
+    "loyaltyPoints": 2450,
+    "wishlistItems": 8,
+    "activeCoupons": 3
+  },
+  "orders": [
+    {
+      "id": "ord_01",
+      "orderNumber": "VC-2026-0214-7823",
+      "orderDate": "2026-02-14T12:30:00Z",
+      "status": "in_transit",
+      "itemCount": 3,
+      "total": 6596,
+      "currency": "INR",
+      "paymentMethod": "UPI (Razorpay)",
+      "shippingAddress": "42, Lotus Garden, Sector 15, Gurugram, Haryana 122001",
+      "trackingNumber": "DTDC928374651",
+      "trackingUrl": "https://tracking.dtdc.com/DTDC928374651",
+      "estimatedDelivery": "Feb 19–21, 2026",
+      "items": [
+        {
+          "id": "oi_01",
+          "productName": "Seven Chakra Healing Crystal Tree",
+          "variantLabel": "Medium (10\") / Amethyst",
+          "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80",
+          "quantity": 1,
+          "price": 2499,
+          "currency": "INR"
+        },
+        {
+          "id": "oi_02",
+          "productName": "Rose Quartz Heart Bowl",
+          "variantLabel": "Standard",
+          "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80",
+          "quantity": 2,
+          "price": 899,
+          "currency": "INR"
+        },
+        {
+          "id": "oi_03",
+          "productName": "Crystal Pyramid Set",
+          "variantLabel": "7-Piece Set",
+          "imageUrl": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80",
+          "quantity": 1,
+          "price": 3499,
+          "currency": "INR"
+        }
+      ],
+      "timeline": [
+        { "step": "Order Placed", "status": "completed", "date": "2026-02-14T12:30:00Z" },
+        { "step": "Order Accepted", "status": "completed", "date": "2026-02-14T14:15:00Z" },
+        { "step": "Shipped", "status": "completed", "date": "2026-02-15T09:00:00Z" },
+        { "step": "In Transit", "status": "active", "date": "2026-02-16T06:30:00Z" },
+        { "step": "Out for Delivery", "status": "upcoming", "date": null },
+        { "step": "Delivered", "status": "upcoming", "date": null }
+      ]
+    },
+    {
+      "id": "ord_02",
+      "orderNumber": "VC-2026-0201-6541",
+      "orderDate": "2026-02-01T09:15:00Z",
+      "status": "delivered",
+      "itemCount": 1,
+      "total": 1999,
+      "currency": "INR",
+      "paymentMethod": "Credit Card (Razorpay)",
+      "shippingAddress": "42, Lotus Garden, Sector 15, Gurugram, Haryana 122001",
+      "trackingNumber": "DTDC827163542",
+      "trackingUrl": "https://tracking.dtdc.com/DTDC827163542",
+      "estimatedDelivery": "Feb 6–8, 2026",
+      "items": [
+        {
+          "id": "oi_04",
+          "productName": "Amethyst Crystal Tree",
+          "variantLabel": "Large (14\")",
+          "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+          "quantity": 1,
+          "price": 1999,
+          "currency": "INR"
+        }
+      ],
+      "timeline": [
+        { "step": "Order Placed", "status": "completed", "date": "2026-02-01T09:15:00Z" },
+        { "step": "Order Accepted", "status": "completed", "date": "2026-02-01T11:00:00Z" },
+        { "step": "Shipped", "status": "completed", "date": "2026-02-02T08:30:00Z" },
+        { "step": "In Transit", "status": "completed", "date": "2026-02-03T07:00:00Z" },
+        { "step": "Out for Delivery", "status": "completed", "date": "2026-02-05T09:00:00Z" },
+        { "step": "Delivered", "status": "completed", "date": "2026-02-05T14:20:00Z" }
+      ]
+    },
+    {
+      "id": "ord_03",
+      "orderNumber": "VC-2026-0118-5432",
+      "orderDate": "2026-01-18T16:45:00Z",
+      "status": "delivered",
+      "itemCount": 2,
+      "total": 3298,
+      "currency": "INR",
+      "paymentMethod": "UPI (Razorpay)",
+      "shippingAddress": "Tower B, 12th Floor, DLF Cyber City, Gurugram, Haryana 122002",
+      "trackingNumber": null,
+      "trackingUrl": null,
+      "estimatedDelivery": "Jan 23–25, 2026",
+      "items": [
+        {
+          "id": "oi_05",
+          "productName": "Vastu Brass Tortoise",
+          "variantLabel": "Medium",
+          "imageUrl": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=400&q=80",
+          "quantity": 1,
+          "price": 1299,
+          "currency": "INR"
+        },
+        {
+          "id": "oi_06",
+          "productName": "Amethyst Crystal Tree",
+          "variantLabel": "Small (6\")",
+          "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+          "quantity": 1,
+          "price": 1999,
+          "currency": "INR"
+        }
+      ],
+      "timeline": [
+        { "step": "Order Placed", "status": "completed", "date": "2026-01-18T16:45:00Z" },
+        { "step": "Order Accepted", "status": "completed", "date": "2026-01-18T18:00:00Z" },
+        { "step": "Shipped", "status": "completed", "date": "2026-01-19T10:00:00Z" },
+        { "step": "In Transit", "status": "completed", "date": "2026-01-20T06:00:00Z" },
+        { "step": "Out for Delivery", "status": "completed", "date": "2026-01-22T08:30:00Z" },
+        { "step": "Delivered", "status": "completed", "date": "2026-01-22T13:45:00Z" }
+      ]
+    },
+    {
+      "id": "ord_04",
+      "orderNumber": "VC-2025-1225-4210",
+      "orderDate": "2025-12-25T10:00:00Z",
+      "status": "cancelled",
+      "itemCount": 1,
+      "total": 699,
+      "currency": "INR",
+      "paymentMethod": "Netbanking (Razorpay)",
+      "shippingAddress": "42, Lotus Garden, Sector 15, Gurugram, Haryana 122001",
+      "trackingNumber": null,
+      "trackingUrl": null,
+      "estimatedDelivery": null,
+      "items": [
+        {
+          "id": "oi_07",
+          "productName": "Selenite Charging Plate",
+          "variantLabel": "Standard",
+          "imageUrl": "https://images.unsplash.com/photo-1602519093485-0630df691f68?w=400&q=80",
+          "quantity": 1,
+          "price": 699,
+          "currency": "INR"
+        }
+      ],
+      "timeline": [
+        { "step": "Order Placed", "status": "completed", "date": "2025-12-25T10:00:00Z" },
+        { "step": "Cancelled", "status": "cancelled", "date": "2025-12-25T18:00:00Z" }
+      ]
+    },
+    {
+      "id": "ord_05",
+      "orderNumber": "VC-2025-1210-3890",
+      "orderDate": "2025-12-10T14:20:00Z",
+      "status": "returned",
+      "itemCount": 1,
+      "total": 1599,
+      "currency": "INR",
+      "paymentMethod": "UPI (Razorpay)",
+      "shippingAddress": "42, Lotus Garden, Sector 15, Gurugram, Haryana 122001",
+      "trackingNumber": "DTDC716253412",
+      "trackingUrl": "https://tracking.dtdc.com/DTDC716253412",
+      "estimatedDelivery": "Dec 15–17, 2025",
+      "items": [
+        {
+          "id": "oi_08",
+          "productName": "Feng Shui Laughing Buddha",
+          "variantLabel": "Gold Finish",
+          "imageUrl": "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=400&q=80",
+          "quantity": 1,
+          "price": 1599,
+          "currency": "INR"
+        }
+      ],
+      "timeline": [
+        { "step": "Order Placed", "status": "completed", "date": "2025-12-10T14:20:00Z" },
+        { "step": "Order Accepted", "status": "completed", "date": "2025-12-10T16:00:00Z" },
+        { "step": "Shipped", "status": "completed", "date": "2025-12-11T09:00:00Z" },
+        { "step": "Delivered", "status": "completed", "date": "2025-12-14T11:30:00Z" },
+        { "step": "Return Requested", "status": "completed", "date": "2025-12-16T09:00:00Z" },
+        { "step": "Refund Processed", "status": "completed", "date": "2025-12-20T14:00:00Z" }
+      ]
+    }
+  ],
+  "addresses": [
+    {
+      "id": "addr_01",
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "street": "42, Lotus Garden, Sector 15",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "pincode": "122001",
+      "country": "India",
+      "isDefault": true,
+      "label": "Home"
+    },
+    {
+      "id": "addr_02",
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "street": "Tower B, 12th Floor, DLF Cyber City",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "pincode": "122002",
+      "country": "India",
+      "isDefault": false,
+      "label": "Office"
+    },
+    {
+      "id": "addr_03",
+      "name": "Anita Sharma",
+      "phone": "+91 91234 56789",
+      "street": "B-12, Green Park Extension",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110016",
+      "country": "India",
+      "isDefault": false,
+      "label": "Other"
+    }
+  ],
+  "wishlistItems": [
+    {
+      "id": "wl_01",
+      "productId": "prod_008",
+      "productName": "Citrine Money Tree",
+      "productSlug": "citrine-money-tree",
+      "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80",
+      "price": 3299,
+      "mrp": 5999,
+      "currency": "INR",
+      "inStock": true,
+      "rating": 4.7,
+      "reviewCount": 134
+    },
+    {
+      "id": "wl_02",
+      "productId": "prod_009",
+      "productName": "Black Tourmaline Raw Stone",
+      "productSlug": "black-tourmaline-raw-stone",
+      "imageUrl": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80",
+      "price": 499,
+      "mrp": 899,
+      "currency": "INR",
+      "inStock": true,
+      "rating": 4.3,
+      "reviewCount": 67
+    },
+    {
+      "id": "wl_03",
+      "productId": "prod_010",
+      "productName": "Tiger Eye Bracelet",
+      "productSlug": "tiger-eye-bracelet",
+      "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80",
+      "price": 799,
+      "mrp": 1299,
+      "currency": "INR",
+      "inStock": false,
+      "rating": 4.5,
+      "reviewCount": 89
+    },
+    {
+      "id": "wl_04",
+      "productId": "prod_011",
+      "productName": "Amethyst Geode Bookend Set",
+      "productSlug": "amethyst-geode-bookend-set",
+      "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+      "price": 4999,
+      "mrp": 7999,
+      "currency": "INR",
+      "inStock": true,
+      "rating": 4.8,
+      "reviewCount": 42
+    },
+    {
+      "id": "wl_05",
+      "productId": "prod_012",
+      "productName": "Rudraksha Mala (108 Beads)",
+      "productSlug": "rudraksha-mala-108-beads",
+      "imageUrl": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=400&q=80",
+      "price": 1499,
+      "mrp": 2499,
+      "currency": "INR",
+      "inStock": true,
+      "rating": 4.6,
+      "reviewCount": 201
+    }
+  ],
+  "coupons": [
+    {
+      "id": "coup_01",
+      "code": "VASTU20",
+      "description": "20% off on orders above ₹2,000",
+      "discountType": "percentage",
+      "discountValue": 20,
+      "maxDiscount": 500,
+      "minOrderValue": 2000,
+      "currency": "INR",
+      "validUntil": "2026-03-31T23:59:59Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_02",
+      "code": "CRYSTALS500",
+      "description": "Flat ₹500 off on orders above ₹3,000",
+      "discountType": "flat",
+      "discountValue": 500,
+      "maxDiscount": null,
+      "minOrderValue": 3000,
+      "currency": "INR",
+      "validUntil": "2026-04-15T23:59:59Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_03",
+      "code": "WELCOME10",
+      "description": "10% off for first-time buyers",
+      "discountType": "percentage",
+      "discountValue": 10,
+      "maxDiscount": 300,
+      "minOrderValue": 0,
+      "currency": "INR",
+      "validUntil": "2026-12-31T23:59:59Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_04",
+      "code": "DIWALI2025",
+      "description": "Flat ₹200 off — Diwali Special",
+      "discountType": "flat",
+      "discountValue": 200,
+      "maxDiscount": null,
+      "minOrderValue": 1000,
+      "currency": "INR",
+      "validUntil": "2025-11-15T23:59:59Z",
+      "isActive": false
+    }
+  ],
+  "loyaltyBalance": {
+    "points": 2450,
+    "equivalentValue": 245,
+    "currency": "INR",
+    "earnRate": "10 points per ₹100 spent",
+    "redeemRate": "100 points = ₹10",
+    "minRedemption": 500,
+    "expiringPoints": 350,
+    "expiringDate": "2026-03-15T23:59:59Z"
+  },
+  "loyaltyTransactions": [
+    {
+      "id": "lt_01",
+      "date": "2026-02-14T12:30:00Z",
+      "description": "Order VC-2026-0214-7823",
+      "type": "earned",
+      "points": 660,
+      "balance": 2450
+    },
+    {
+      "id": "lt_02",
+      "date": "2026-02-01T09:15:00Z",
+      "description": "Order VC-2026-0201-6541",
+      "type": "earned",
+      "points": 200,
+      "balance": 1790
+    },
+    {
+      "id": "lt_03",
+      "date": "2026-01-18T16:45:00Z",
+      "description": "Order VC-2026-0118-5432",
+      "type": "earned",
+      "points": 330,
+      "balance": 1590
+    },
+    {
+      "id": "lt_04",
+      "date": "2026-01-10T10:00:00Z",
+      "description": "Redeemed for ₹100 discount",
+      "type": "redeemed",
+      "points": -1000,
+      "balance": 1260
+    },
+    {
+      "id": "lt_05",
+      "date": "2025-12-25T10:00:00Z",
+      "description": "Order VC-2025-1225-4210 (cancelled — reversed)",
+      "type": "adjusted",
+      "points": -70,
+      "balance": 2260
+    },
+    {
+      "id": "lt_06",
+      "date": "2025-12-10T14:20:00Z",
+      "description": "Order VC-2025-1210-3890",
+      "type": "earned",
+      "points": 160,
+      "balance": 2330
+    },
+    {
+      "id": "lt_07",
+      "date": "2025-11-01T00:00:00Z",
+      "description": "Welcome bonus",
+      "type": "earned",
+      "points": 500,
+      "balance": 2170
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk_01",
+      "title": "Vastu Home Consultation",
+      "date": "2026-02-20",
+      "time": "11:00 AM — 12:00 PM",
+      "status": "confirmed",
+      "meetingLink": "https://meet.google.com/abc-defg-hij",
+      "consultantName": "Pandit Ramesh Ji",
+      "price": 999,
+      "currency": "INR"
+    },
+    {
+      "id": "bk_02",
+      "title": "Crystal Healing Session",
+      "date": "2026-01-05",
+      "time": "3:00 PM — 3:45 PM",
+      "status": "completed",
+      "meetingLink": null,
+      "consultantName": "Dr. Meera Kapoor",
+      "price": 1499,
+      "currency": "INR"
+    }
+  ],
+  "giftCards": [
+    {
+      "id": "gc_01",
+      "code": "GC-VASTUCART-2026",
+      "balance": 500,
+      "originalAmount": 1000,
+      "currency": "INR",
+      "expiryDate": "2026-12-31T23:59:59Z",
+      "isActive": true
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_01",
+      "type": "order",
+      "title": "Order In Transit",
+      "message": "Your order VC-2026-0214-7823 is on its way! Expected delivery: Feb 19–21.",
+      "date": "2026-02-16T06:30:00Z",
+      "isRead": false,
+      "link": "/dashboard/orders/ord_01"
+    },
+    {
+      "id": "notif_02",
+      "type": "order",
+      "title": "Order Shipped",
+      "message": "Your order VC-2026-0214-7823 has been shipped via DTDC. Tracking: DTDC928374651.",
+      "date": "2026-02-15T09:00:00Z",
+      "isRead": true,
+      "link": "/dashboard/orders/ord_01"
+    },
+    {
+      "id": "notif_03",
+      "type": "promotion",
+      "title": "Valentine's Day Sale!",
+      "message": "Use code LOVE20 for 20% off on all crystal trees. Valid today only!",
+      "date": "2026-02-14T08:00:00Z",
+      "isRead": false,
+      "link": "/collections/crystal-trees"
+    },
+    {
+      "id": "notif_04",
+      "type": "stock",
+      "title": "Back in Stock!",
+      "message": "Tiger Eye Bracelet is back in stock. Grab yours before it sells out!",
+      "date": "2026-02-13T10:00:00Z",
+      "isRead": true,
+      "link": "/products/tiger-eye-bracelet"
+    },
+    {
+      "id": "notif_05",
+      "type": "order",
+      "title": "Order Delivered",
+      "message": "Your order VC-2026-0201-6541 has been delivered. We hope you love it!",
+      "date": "2026-02-05T14:20:00Z",
+      "isRead": true,
+      "link": "/dashboard/orders/ord_02"
+    },
+    {
+      "id": "notif_06",
+      "type": "loyalty",
+      "title": "Points Expiring Soon",
+      "message": "350 loyalty points will expire on Mar 15. Use them before they're gone!",
+      "date": "2026-02-10T09:00:00Z",
+      "isRead": false,
+      "link": "/dashboard/loyalty"
+    },
+    {
+      "id": "notif_07",
+      "type": "promotion",
+      "title": "New Arrivals!",
+      "message": "Check out our latest collection of Feng Shui items, just launched today.",
+      "date": "2026-02-08T12:00:00Z",
+      "isRead": true,
+      "link": "/collections/new-arrivals"
+    }
+  ],
+  "newArrivals": [
+    {
+      "id": "na_01",
+      "name": "Malachite Palmstone",
+      "slug": "malachite-palmstone",
+      "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80",
+      "price": 899,
+      "mrp": 1499,
+      "currency": "INR",
+      "badge": "New"
+    },
+    {
+      "id": "na_02",
+      "name": "Feng Shui Wind Chime — 5 Rod",
+      "slug": "feng-shui-wind-chime-5-rod",
+      "imageUrl": "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=400&q=80",
+      "price": 1199,
+      "mrp": 1999,
+      "currency": "INR",
+      "badge": "New"
+    },
+    {
+      "id": "na_03",
+      "name": "Clear Quartz Sphere (60mm)",
+      "slug": "clear-quartz-sphere-60mm",
+      "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+      "price": 2499,
+      "mrp": 3999,
+      "currency": "INR",
+      "badge": "New"
+    },
+    {
+      "id": "na_04",
+      "name": "Lapis Lazuli Tumble Set (5 pcs)",
+      "slug": "lapis-lazuli-tumble-set",
+      "imageUrl": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80",
+      "price": 599,
+      "mrp": 999,
+      "currency": "INR",
+      "badge": "New"
+    }
+  ],
+  "offers": [
+    {
+      "id": "offer_01",
+      "title": "Valentine's Week Special",
+      "description": "Gift a crystal tree to someone special — flat 20% off all crystal trees this week!",
+      "code": "LOVE20",
+      "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=600&q=80",
+      "badgeLabel": "Limited Time",
+      "badgeColor": "secondary",
+      "ctaLabel": "Shop Crystal Trees",
+      "ctaHref": "/collections/crystal-trees"
+    },
+    {
+      "id": "offer_02",
+      "title": "Just for You, Priya!",
+      "description": "Based on your recent purchases, we think you'll love our new Chakra Collection. Extra 15% off with your loyalty points.",
+      "code": "PRIYA15",
+      "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80",
+      "badgeLabel": "Exclusive",
+      "badgeColor": "primary",
+      "ctaLabel": "Explore Collection",
+      "ctaHref": "/collections/chakra"
+    },
+    {
+      "id": "offer_03",
+      "title": "Free Vastu Consultation",
+      "description": "Book a free 15-min Vastu consultation with every order above ₹5,000. Limited slots available.",
+      "code": null,
+      "imageUrl": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=600&q=80",
+      "badgeLabel": "Bonus",
+      "badgeColor": "green",
+      "ctaLabel": "Learn More",
+      "ctaHref": "/consultations"
+    }
+  ],
+  "supportInfo": {
+    "email": "support@vastucart.in",
+    "phone": "+91 1800-123-4567",
+    "whatsapp": "+91 98765 00000",
+    "hours": "Mon–Sat, 10 AM – 7 PM IST",
+    "faqLinks": [
+      { "label": "Shipping & Delivery", "href": "/policies/shipping" },
+      { "label": "Returns & Refunds", "href": "/policies/returns" },
+      { "label": "Payment Methods", "href": "/policies/payments" },
+      { "label": "Crystal Care Guide", "href": "/guides/crystal-care" }
+    ]
+  }
+}

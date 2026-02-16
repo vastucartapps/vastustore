@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "models": {
+      "Category": "A product category with hierarchical parent-child relationships, image, SEO, and display order.",
+      "CategoryOption": "Flattened category for parent dropdown selection with depth level."
+    },
+    "relationships": [
+      "Categories can have a parent category forming a tree hierarchy.",
+      "Each category has a productCount showing how many products belong to it."
+    ]
+  },
+  "selectedCategoryId": "cat-2",
+  "parentOptions": [
+    { "id": "cat-1", "name": "Puja Essentials", "depth": 0 },
+    { "id": "cat-6", "name": "Incense & Dhoop", "depth": 1 },
+    { "id": "cat-9", "name": "Camphor & Wicks", "depth": 1 },
+    { "id": "cat-2", "name": "Idols & Statues", "depth": 0 },
+    { "id": "cat-10", "name": "Brass Idols", "depth": 1 },
+    { "id": "cat-11", "name": "Stone Idols", "depth": 1 },
+    { "id": "cat-3", "name": "Vastu Products", "depth": 0 },
+    { "id": "cat-4", "name": "Rudraksha & Malas", "depth": 0 },
+    { "id": "cat-5", "name": "Yantra & Frames", "depth": 0 },
+    { "id": "cat-7", "name": "Books & Guides", "depth": 0 }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Puja Essentials",
+      "slug": "puja-essentials",
+      "description": "Everything you need for daily worship — incense, camphor, wicks, ghee lamps, kumkum, and other puja samagri.",
+      "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "active",
+      "productCount": 34,
+      "displayOrder": 1,
+      "seo": {
+        "metaTitle": "Puja Essentials – Buy Online | VastuCart",
+        "metaDescription": "Shop puja essentials online. Incense, camphor, kumkum, wicks & more for daily worship. Free delivery on orders above ₹499."
+      },
+      "createdAt": "2025-06-10T10:00:00Z",
+      "updatedAt": "2026-02-01T12:00:00Z",
+      "children": [
+        {
+          "id": "cat-6",
+          "name": "Incense & Dhoop",
+          "slug": "incense-dhoop",
+          "description": "Premium incense sticks, dhoop cones, and sambrani cups in sandalwood, jasmine, rose, and traditional blends.",
+          "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=300&fit=crop",
+          "parentId": "cat-1",
+          "parentName": "Puja Essentials",
+          "status": "active",
+          "productCount": 18,
+          "displayOrder": 1,
+          "seo": {
+            "metaTitle": "Incense Sticks & Dhoop – Buy Online | VastuCart",
+            "metaDescription": "Shop premium incense sticks and dhoop online. Sandalwood, jasmine, rose and more."
+          },
+          "createdAt": "2025-07-15T08:00:00Z",
+          "updatedAt": "2026-01-20T10:30:00Z",
+          "children": []
+        },
+        {
+          "id": "cat-9",
+          "name": "Camphor & Wicks",
+          "slug": "camphor-wicks",
+          "description": "Pure camphor tablets, cotton wicks, and ghee wicks for aarti and puja rituals.",
+          "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=300&fit=crop",
+          "parentId": "cat-1",
+          "parentName": "Puja Essentials",
+          "status": "active",
+          "productCount": 8,
+          "displayOrder": 2,
+          "seo": {
+            "metaTitle": "Camphor & Wicks for Puja | VastuCart",
+            "metaDescription": "Buy pure camphor tablets and cotton wicks for aarti. Shop puja wicks online."
+          },
+          "createdAt": "2025-08-01T09:00:00Z",
+          "updatedAt": "2026-01-15T14:00:00Z",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cat-2",
+      "name": "Idols & Statues",
+      "slug": "idols-statues",
+      "description": "Handcrafted brass, marble, and stone idols of Hindu deities. Each piece is made by skilled artisans and comes with a certificate of authenticity.",
+      "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "active",
+      "productCount": 42,
+      "displayOrder": 2,
+      "seo": {
+        "metaTitle": "Hindu God Idols & Statues – Buy Online | VastuCart",
+        "metaDescription": "Shop handcrafted Hindu god idols and statues. Brass, marble & stone murtis with certificate of authenticity."
+      },
+      "createdAt": "2025-06-10T10:00:00Z",
+      "updatedAt": "2026-02-10T09:00:00Z",
+      "children": [
+        {
+          "id": "cat-10",
+          "name": "Brass Idols",
+          "slug": "brass-idols",
+          "description": "Traditional brass idols handcrafted by Moradabad artisans. Available in various sizes.",
+          "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=400&h=300&fit=crop",
+          "parentId": "cat-2",
+          "parentName": "Idols & Statues",
+          "status": "active",
+          "productCount": 28,
+          "displayOrder": 1,
+          "seo": {
+            "metaTitle": "Brass Idols – Handcrafted | VastuCart",
+            "metaDescription": "Buy handcrafted brass idols online. Moradabad artisan collection."
+          },
+          "createdAt": "2025-09-20T08:00:00Z",
+          "updatedAt": "2026-02-05T11:00:00Z",
+          "children": []
+        },
+        {
+          "id": "cat-11",
+          "name": "Stone Idols",
+          "slug": "stone-idols",
+          "description": "Carved stone murtis in marble, soapstone, and granite. Each piece is unique.",
+          "imageUrl": "https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?w=400&h=300&fit=crop",
+          "parentId": "cat-2",
+          "parentName": "Idols & Statues",
+          "status": "active",
+          "productCount": 14,
+          "displayOrder": 2,
+          "seo": {
+            "metaTitle": "Stone Idols & Murtis | VastuCart",
+            "metaDescription": "Buy carved stone idols and marble murtis online."
+          },
+          "createdAt": "2025-10-05T10:00:00Z",
+          "updatedAt": "2026-01-28T16:00:00Z",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cat-3",
+      "name": "Vastu Products",
+      "slug": "vastu-products",
+      "description": "Vastu Shastra remedies including pyramids, crystals, wind chimes, and directional correction tools for home and office.",
+      "imageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "active",
+      "productCount": 21,
+      "displayOrder": 3,
+      "seo": {
+        "metaTitle": "Vastu Products & Remedies | VastuCart",
+        "metaDescription": "Shop Vastu Shastra products online. Pyramids, crystals, wind chimes for positive energy."
+      },
+      "createdAt": "2025-06-10T10:00:00Z",
+      "updatedAt": "2026-02-08T08:00:00Z",
+      "children": []
+    },
+    {
+      "id": "cat-4",
+      "name": "Rudraksha & Malas",
+      "slug": "rudraksha-malas",
+      "description": "Certified genuine Rudraksha beads and prayer malas. Tulsi, sandalwood, and crystal varieties for meditation and daily use.",
+      "imageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "active",
+      "productCount": 16,
+      "displayOrder": 4,
+      "seo": {
+        "metaTitle": "Rudraksha & Prayer Malas | VastuCart",
+        "metaDescription": "Buy certified Rudraksha beads and prayer malas. Tulsi, sandalwood, crystal malas."
+      },
+      "createdAt": "2025-06-10T10:00:00Z",
+      "updatedAt": "2026-01-30T11:00:00Z",
+      "children": []
+    },
+    {
+      "id": "cat-5",
+      "name": "Yantra & Frames",
+      "slug": "yantra-frames",
+      "description": "Sacred geometric yantras in copper, gold-plated, and crystal. Framed and unframed options available.",
+      "imageUrl": "https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "active",
+      "productCount": 12,
+      "displayOrder": 5,
+      "seo": {
+        "metaTitle": "Sacred Yantras & Frames | VastuCart",
+        "metaDescription": "Shop sacred yantras in copper and gold plate. Sri Yantra, Kuber Yantra and more."
+      },
+      "createdAt": "2025-06-10T10:00:00Z",
+      "updatedAt": "2026-02-03T14:00:00Z",
+      "children": []
+    },
+    {
+      "id": "cat-7",
+      "name": "Books & Guides",
+      "slug": "books-guides",
+      "description": "Educational books on Vastu Shastra, Hindu mythology, spiritual practices, and meditation guides.",
+      "imageUrl": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop",
+      "parentId": null,
+      "parentName": null,
+      "status": "inactive",
+      "productCount": 3,
+      "displayOrder": 6,
+      "seo": {
+        "metaTitle": "Vastu & Spiritual Books | VastuCart",
+        "metaDescription": "Buy Vastu Shastra books and spiritual guides online."
+      },
+      "createdAt": "2025-11-01T10:00:00Z",
+      "updatedAt": "2026-01-10T09:00:00Z",
+      "children": []
+    }
+  ],
+  "editingCategory": null
+}

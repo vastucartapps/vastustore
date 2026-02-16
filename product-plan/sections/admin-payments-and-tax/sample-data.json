@@ -1,0 +1,22 @@
+{
+  "mode": "live",
+  "gateways": {
+    "razorpay": { "keyId": "rzp_live_SAMPLE_KEY_ID", "keySecret": "SAMPLE_SECRET_REDACTED", "isConnected": true },
+    "stripe": { "publishableKey": "pk_live_SAMPLE_PUB_KEY", "secretKey": "SAMPLE_SECRET_REDACTED", "isConnected": true }
+  },
+  "paymentMethods": [
+    { "id": "upi", "name": "UPI", "icon": "smartphone", "enabled": true, "description": "Google Pay, PhonePe, Paytm UPI" },
+    { "id": "cards", "name": "Credit / Debit Cards", "icon": "credit-card", "enabled": true, "description": "Visa, Mastercard, Rupay, Amex" },
+    { "id": "netbanking", "name": "Netbanking", "icon": "landmark", "enabled": true, "description": "All major Indian banks" },
+    { "id": "wallets", "name": "Wallets", "icon": "wallet", "enabled": false, "description": "Paytm, Mobikwik, Freecharge" },
+    { "id": "cod", "name": "Cash on Delivery", "icon": "banknote", "enabled": true, "description": "India only, ₹200-₹25,000" }
+  ],
+  "gstConfig": { "gstin": "29AABCV1234F1Z5", "defaultRate": 18, "defaultHSN": "8306" },
+  "internationalTax": { "taxExempt": true, "lutNumber": "AD290225000012345" },
+  "productOverrides": [
+    { "productId": "prod-7", "productName": "5 Mukhi Rudraksha – Certified", "sku": "VC-RUD-5MK-CERT", "gstRate": 5, "hsnCode": "7117" },
+    { "productId": "prod-8", "productName": "Vastu Shastra Complete Guide", "sku": "VC-BOOK-VSG-01", "gstRate": 0, "hsnCode": "4901" },
+    { "productId": "prod-1", "productName": "Brass Ganesha Idol – Medium", "sku": "VC-IDOL-GAN-M", "gstRate": 12, "hsnCode": "8306" }
+  ],
+  "activeTaxTab": "gst"
+}

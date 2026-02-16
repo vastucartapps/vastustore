@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
+/* VastuCart Design Tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary — Deep Teal */
+  --vc-primary: #013f47;
+  --vc-primary-50: #e8f5f3;
+  --vc-primary-100: #c5e8e2;
+  --vc-primary-200: #71c1ae;
+  --vc-primary-300: #4a9a8d;
+  --vc-primary-400: #2a7a72;
+  --vc-primary-500: #013f47;
+  --vc-primary-600: #054348;
+  --vc-primary-700: #084b49;
+  --vc-primary-800: #064645;
+  --vc-primary-900: #112b2c;
+
+  /* Secondary — Burnt Saffron */
+  --vc-secondary: #c85103;
+  --vc-secondary-50: #fff5ed;
+  --vc-secondary-100: #ffc187;
+  --vc-secondary-200: #f6be9a;
+  --vc-secondary-300: #fd8630;
+  --vc-secondary-400: #d04f28;
+  --vc-secondary-500: #c85103;
+  --vc-secondary-600: #9a3535;
+  --vc-secondary-700: #7c2d2d;
+  --vc-secondary-800: #562c2c;
+  --vc-secondary-900: #3d1f1f;
+
+  /* Backgrounds */
+  --vc-bg: #fffbf5;
+  --vc-bg-card: #ffffff;
+  --vc-bg-subtle: #f5dfbb;
+  --vc-bg-warm: #ffc187;
+
+  /* Earth Neutrals */
+  --vc-earth-300: #a39585;
+  --vc-earth-400: #75615a;
+  --vc-earth-500: #71685b;
+  --vc-earth-600: #5a4f47;
+  --vc-earth-700: #433b35;
+
+  /* Semantic */
+  --vc-success: #10B981;
+  --vc-warning: #F59E0B;
+  --vc-error: #EF4444;
+  --vc-success-light: #D1FAE5;
+  --vc-warning-light: #FEF3C7;
+  --vc-error-light: #FEE2E2;
+
+  /* Gradients */
+  --vc-gradient: linear-gradient(90deg, #013f47, #2a7a72, #c85103);
+  --vc-gradient-primary: linear-gradient(135deg, #013f47, #054348);
+  --vc-gradient-secondary: linear-gradient(135deg, #c85103, #d06028);
+  --vc-gradient-header: linear-gradient(135deg, #013f47, #054348);
+  --vc-gradient-footer: linear-gradient(180deg, #013f47, #012d33);
+
+  /* Shadows */
+  --vc-shadow-sm: 0 1px 2px rgba(1, 63, 71, 0.05);
+  --vc-shadow-md: 0 4px 6px rgba(1, 63, 71, 0.07);
+  --vc-shadow-lg: 0 10px 15px rgba(1, 63, 71, 0.1);
+
+  /* Radii */
+  --vc-radius-sm: 0.375rem;
+  --vc-radius-md: 0.5rem;
+  --vc-radius-lg: 0.75rem;
+  --vc-radius-xl: 1rem;
+
+  /* Theme integration */
+  --background: #fffbf5;
+  --foreground: #112b2c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-lora);
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+code, pre, kbd, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Gradient accent border utility */
+.vc-gradient-border {
+  border-top: 3px solid transparent;
+  border-image: var(--vc-gradient) 1;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

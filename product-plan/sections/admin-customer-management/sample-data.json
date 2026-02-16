@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "models": {
+      "CustomerRow": "Customer summary for the list table.",
+      "CustomerDetail": "Full customer profile with orders, addresses, reviews, and notes.",
+      "AdminNote": "Internal admin note on a customer."
+    },
+    "relationships": [
+      "CustomerDetail contains CustomerOrders, CustomerAddresses, CustomerReviews, and AdminNotes."
+    ]
+  },
+  "filters": { "search": "", "segment": "all", "sortField": "joinedAt", "sortDirection": "desc" },
+  "totalCount": 156,
+  "customers": [
+    { "id": "cust-101", "name": "Priya Sharma", "email": "priya.sharma@example.com", "phone": "+91 98765 43210", "avatarUrl": "https://i.pravatar.cc/150?u=priya", "totalOrders": 12, "lifetimeValue": 34500, "currency": "INR", "segments": ["repeat", "high_value"], "joinedAt": "2025-03-15T10:00:00Z" },
+    { "id": "cust-102", "name": "Amit Patel", "email": "amit.patel@example.com", "phone": "+91 87654 32109", "avatarUrl": "https://i.pravatar.cc/150?u=amit", "totalOrders": 8, "lifetimeValue": 22100, "currency": "INR", "segments": ["repeat"], "joinedAt": "2025-05-20T08:30:00Z" },
+    { "id": "cust-103", "name": "Sarah Miller", "email": "sarah.m@example.com", "phone": "+1 415-555-0198", "avatarUrl": "https://i.pravatar.cc/150?u=sarah", "totalOrders": 3, "lifetimeValue": 189, "currency": "USD", "segments": ["repeat"], "joinedAt": "2025-08-10T14:00:00Z" },
+    { "id": "cust-104", "name": "Deepika Menon", "email": "deepika.menon@example.com", "phone": "+91 76543 21098", "avatarUrl": "https://i.pravatar.cc/150?u=deepika", "totalOrders": 15, "lifetimeValue": 48700, "currency": "INR", "segments": ["repeat", "high_value"], "joinedAt": "2025-01-05T12:00:00Z" },
+    { "id": "cust-105", "name": "Rajesh Kumar", "email": "rajesh.k@example.com", "phone": "+91 65432 10987", "avatarUrl": "https://i.pravatar.cc/150?u=rajesh", "totalOrders": 2, "lifetimeValue": 5400, "currency": "INR", "segments": [], "joinedAt": "2025-11-20T09:00:00Z" },
+    { "id": "cust-106", "name": "Meera Joshi", "email": "meera.j@example.com", "phone": "+91 54321 09876", "avatarUrl": "https://i.pravatar.cc/150?u=meera", "totalOrders": 6, "lifetimeValue": 18300, "currency": "INR", "segments": ["repeat"], "joinedAt": "2025-06-12T11:30:00Z" },
+    { "id": "cust-107", "name": "John Davis", "email": "john.d@example.com", "phone": "+1 212-555-0147", "avatarUrl": "https://i.pravatar.cc/150?u=john", "totalOrders": 1, "lifetimeValue": 89, "currency": "USD", "segments": ["new"], "joinedAt": "2026-01-28T20:00:00Z" },
+    { "id": "cust-108", "name": "Kavita Singh", "email": "kavita.s@example.com", "phone": "+91 43210 98765", "avatarUrl": "https://i.pravatar.cc/150?u=kavita", "totalOrders": 1, "lifetimeValue": 1899, "currency": "INR", "segments": ["new"], "joinedAt": "2026-02-01T16:00:00Z" },
+    { "id": "cust-109", "name": "Ananya Reddy", "email": "ananya.r@example.com", "phone": "+91 32109 87654", "avatarUrl": "https://i.pravatar.cc/150?u=ananya", "totalOrders": 0, "lifetimeValue": 0, "currency": "INR", "segments": ["inactive"], "joinedAt": "2025-04-10T07:00:00Z" },
+    { "id": "cust-110", "name": "Sunita Verma", "email": "sunita.v@example.com", "phone": "+91 21098 76543", "avatarUrl": "https://i.pravatar.cc/150?u=sunita", "totalOrders": 4, "lifetimeValue": 9200, "currency": "INR", "segments": ["repeat"], "joinedAt": "2025-07-25T13:00:00Z" }
+  ],
+  "customerDetail": {
+    "id": "cust-101",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "emailVerified": true,
+    "phone": "+91 98765 43210",
+    "avatarUrl": "https://i.pravatar.cc/150?u=priya",
+    "joinedAt": "2025-03-15T10:00:00Z",
+    "lastOrderAt": "2026-02-14T10:23:00Z",
+    "totalOrders": 12,
+    "lifetimeValue": 34500,
+    "averageOrderValue": 2875,
+    "currency": "INR",
+    "loyaltyPoints": 3450,
+    "segments": ["repeat", "high_value"],
+    "recentOrders": [
+      { "id": "ord-2401", "orderNumber": "VC-20260214-2401", "total": 4599, "currency": "INR", "status": "processing", "date": "2026-02-14T10:23:00Z", "itemCount": 3 },
+      { "id": "ord-2380", "orderNumber": "VC-20260205-2380", "total": 2499, "currency": "INR", "status": "delivered", "date": "2026-02-05T14:00:00Z", "itemCount": 1 },
+      { "id": "ord-2350", "orderNumber": "VC-20260120-2350", "total": 6200, "currency": "INR", "status": "delivered", "date": "2026-01-20T09:30:00Z", "itemCount": 4 },
+      { "id": "ord-2310", "orderNumber": "VC-20260105-2310", "total": 1899, "currency": "INR", "status": "delivered", "date": "2026-01-05T16:45:00Z", "itemCount": 1 },
+      { "id": "ord-2280", "orderNumber": "VC-20251220-2280", "total": 8750, "currency": "INR", "status": "delivered", "date": "2025-12-20T11:00:00Z", "itemCount": 5 }
+    ],
+    "addresses": [
+      { "id": "addr-1", "label": "Home", "street": "42, Lotus Colony, Koramangala 4th Block", "city": "Bengaluru", "state": "Karnataka", "pincode": "560034", "country": "India", "isDefault": true },
+      { "id": "addr-2", "label": "Office", "street": "WeWork Galaxy, 43 Residency Road", "city": "Bengaluru", "state": "Karnataka", "pincode": "560025", "country": "India", "isDefault": false }
+    ],
+    "reviews": [
+      { "id": "rev-1", "productName": "Brass Ganesha Idol – Medium", "productImageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=60&h=60&fit=crop", "rating": 5, "excerpt": "Absolutely stunning craftsmanship. The idol is beautifully detailed and has a wonderful antique finish.", "date": "2026-02-07T10:00:00Z" },
+      { "id": "rev-2", "productName": "Sandalwood Incense Sticks", "productImageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=60&h=60&fit=crop", "rating": 4, "excerpt": "Good quality incense with authentic sandalwood fragrance. Burns evenly.", "date": "2026-01-22T15:00:00Z" },
+      { "id": "rev-3", "productName": "Vastu Pyramid – Crystal Clear", "productImageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=60&h=60&fit=crop", "rating": 5, "excerpt": "Beautiful crystal pyramid. Placed it in the center of my living room as recommended.", "date": "2025-12-28T09:00:00Z" }
+    ],
+    "notes": [
+      { "id": "note-1", "author": "Admin", "message": "VIP customer. Always ensure priority shipping for her orders.", "createdAt": "2025-06-10T10:00:00Z" },
+      { "id": "note-2", "author": "Support", "message": "Called to inquire about bulk order for Diwali gifts. Follow up in October.", "createdAt": "2025-09-15T14:30:00Z" }
+    ]
+  }
+}

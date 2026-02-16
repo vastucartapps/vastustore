@@ -1,0 +1,20 @@
+{
+  "zones": [
+    { "id": "zone-1", "name": "Metro Cities (Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad)", "rate": 49, "currency": "INR", "isEnabled": true },
+    { "id": "zone-2", "name": "Tier 2 Cities", "rate": 79, "currency": "INR", "isEnabled": true },
+    { "id": "zone-3", "name": "Rest of India", "rate": 99, "currency": "INR", "isEnabled": true },
+    { "id": "zone-4", "name": "North America", "rate": 15, "currency": "USD", "isEnabled": true },
+    { "id": "zone-5", "name": "Europe", "rate": 18, "currency": "USD", "isEnabled": true },
+    { "id": "zone-6", "name": "Rest of World", "rate": 25, "currency": "USD", "isEnabled": false }
+  ],
+  "freeShipping": { "enabled": true, "thresholdINR": 499, "thresholdUSD": 50 },
+  "cod": { "enabled": true, "fee": 40, "minOrder": 200, "maxOrder": 25000 },
+  "deliveryEstimates": [
+    { "id": "de-1", "region": "Metro Cities", "pincodePrefix": "110,400,560,600,700,500", "minDays": 2, "maxDays": 4 },
+    { "id": "de-2", "region": "Tier 2 Cities", "pincodePrefix": "226,302,380,411,440", "minDays": 4, "maxDays": 6 },
+    { "id": "de-3", "region": "Rest of India", "pincodePrefix": "", "minDays": 5, "maxDays": 8 },
+    { "id": "de-4", "region": "North America", "pincodePrefix": "", "minDays": 10, "maxDays": 15 },
+    { "id": "de-5", "region": "Europe", "pincodePrefix": "", "minDays": 12, "maxDays": 18 }
+  ],
+  "shippingPolicy": "## Shipping Policy\n\nWe ship across India and internationally. Domestic orders are dispatched within 1-2 business days. International orders are dispatched within 2-3 business days.\n\n### Free Shipping\nFree shipping on all domestic orders above ₹499 and international orders above $50.\n\n### Cash on Delivery\nCOD is available for domestic orders between ₹200 and ₹25,000 with a flat ₹40 COD fee.\n\n### Delivery Times\n- Metro Cities: 2-4 business days\n- Tier 2 Cities: 4-6 business days\n- Rest of India: 5-8 business days\n- International: 10-18 business days\n\n### Tracking\nAll orders come with tracking. You will receive a tracking link via email and SMS once your order is shipped."
+}

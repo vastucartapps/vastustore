@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "models": {
+      "AuthUser": "A user account with authentication credentials, profile info, role, and verification status.",
+      "ActiveSession": "A record of an active login session showing device, browser, location, and last activity.",
+      "MarketingSlide": "Admin-configurable content for the auth page marketing side — image, quote, and attribution.",
+      "PasswordRequirement": "A password validation rule with label and met/unmet status for the strength meter."
+    },
+    "relationships": [
+      "AuthUser has many ActiveSession",
+      "MarketingSlide is store-wide configuration (no user association)"
+    ]
+  },
+  "marketingSlides": [
+    {
+      "id": "slide-1",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+      "quote": "Transform your space into a sanctuary of positive energy and timeless beauty.",
+      "attribution": "VastuCart Collection",
+      "isActive": true,
+      "order": 1
+    },
+    {
+      "id": "slide-2",
+      "imageUrl": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800",
+      "quote": "Every corner of your home tells a story. Let it speak of harmony and prosperity.",
+      "attribution": "Vastu Living Guide",
+      "isActive": true,
+      "order": 2
+    },
+    {
+      "id": "slide-3",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800",
+      "quote": "Ancient wisdom meets modern elegance — curated pieces for the conscious home.",
+      "attribution": "VastuCart Essentials",
+      "isActive": false,
+      "order": 3
+    }
+  ],
+  "sampleUser": {
+    "id": "usr-001",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "role": "customer",
+    "isEmailVerified": true,
+    "avatarUrl": null,
+    "createdAt": "2025-11-15T10:30:00Z",
+    "lastLoginAt": "2026-02-12T14:22:00Z"
+  },
+  "sampleAdminUser": {
+    "id": "usr-admin-001",
+    "name": "Rohan Mehta",
+    "email": "rohan@vastucart.in",
+    "role": "admin",
+    "isEmailVerified": true,
+    "avatarUrl": null,
+    "createdAt": "2025-06-01T08:00:00Z",
+    "lastLoginAt": "2026-02-13T09:05:00Z"
+  },
+  "guestConversion": {
+    "email": "guest.buyer@example.com",
+    "orderNumber": "VC-20260210-4821",
+    "orderTotal": "₹2,450",
+    "message": "Your order is confirmed! Create an account to track your order and earn loyalty points."
+  },
+  "activeSessions": [
+    {
+      "id": "sess-001",
+      "device": "Chrome on Windows",
+      "ipAddress": "49.36.xx.xx",
+      "location": "Mumbai, India",
+      "lastActive": "2026-02-13T09:45:00Z",
+      "isCurrent": true
+    },
+    {
+      "id": "sess-002",
+      "device": "Safari on iPhone",
+      "ipAddress": "49.36.xx.xx",
+      "location": "Mumbai, India",
+      "lastActive": "2026-02-12T18:30:00Z",
+      "isCurrent": false
+    },
+    {
+      "id": "sess-003",
+      "device": "Firefox on MacOS",
+      "ipAddress": "103.21.xx.xx",
+      "location": "Delhi, India",
+      "lastActive": "2026-01-28T11:15:00Z",
+      "isCurrent": false
+    }
+  ],
+  "passwordRequirements": [
+    { "label": "At least 8 characters", "key": "minLength" },
+    { "label": "One uppercase letter", "key": "uppercase" },
+    { "label": "One lowercase letter", "key": "lowercase" },
+    { "label": "One number", "key": "number" },
+    { "label": "One special character (!@#$%)", "key": "special" }
+  ],
+  "verificationBanner": {
+    "message": "Please verify your email address to unlock all features.",
+    "actionLabel": "Resend Verification Email",
+    "isDismissible": true
+  }
+}

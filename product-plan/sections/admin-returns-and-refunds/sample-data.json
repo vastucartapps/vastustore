@@ -1,0 +1,161 @@
+{
+  "_meta": {
+    "models": {
+      "ReturnCard": "A return request summary displayed on the Kanban board.",
+      "ReturnDetail": "Full return request with product info, customer photos, admin actions, timeline.",
+      "ReturnPhoto": "Customer-uploaded photo evidence for a return.",
+      "ReturnTimelineEvent": "A status change or action event in the return lifecycle."
+    },
+    "relationships": [
+      "ReturnDetail references an Order and a Product.",
+      "Each return has a timeline of events tracking status changes."
+    ]
+  },
+  "returns": [
+    {
+      "id": "ret-301",
+      "orderNumber": "VC-20260210-2392",
+      "customerName": "Michael Chen",
+      "customerEmail": "michael.c@example.com",
+      "productName": "Vastu Pyramid – Crystal Clear",
+      "productImageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=100&h=100&fit=crop",
+      "variantLabel": "Medium",
+      "reason": "damaged_in_transit",
+      "status": "pending",
+      "refundAmount": 45,
+      "currency": "USD",
+      "requestedAt": "2026-02-13T08:00:00Z",
+      "daysOpen": 1
+    },
+    {
+      "id": "ret-300",
+      "orderNumber": "VC-20260211-2393",
+      "customerName": "Ananya Reddy",
+      "customerEmail": "ananya.r@example.com",
+      "productName": "Sri Yantra Gold Plated Frame",
+      "productImageUrl": "https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?w=100&h=100&fit=crop",
+      "variantLabel": "Large",
+      "reason": "not_as_described",
+      "status": "pending",
+      "refundAmount": 4999,
+      "currency": "INR",
+      "requestedAt": "2026-02-12T16:30:00Z",
+      "daysOpen": 2
+    },
+    {
+      "id": "ret-299",
+      "orderNumber": "VC-20260208-2388",
+      "customerName": "Sunita Verma",
+      "customerEmail": "sunita.v@example.com",
+      "productName": "Tulsi Mala – 108 Beads Premium",
+      "productImageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=100&h=100&fit=crop",
+      "variantLabel": "Standard",
+      "reason": "changed_mind",
+      "status": "under_review",
+      "refundAmount": 599,
+      "currency": "INR",
+      "requestedAt": "2026-02-10T11:00:00Z",
+      "daysOpen": 4
+    },
+    {
+      "id": "ret-298",
+      "orderNumber": "VC-20260207-2385",
+      "customerName": "Vikram Rao",
+      "customerEmail": "vikram.r@example.com",
+      "productName": "Brass Ganesha Idol – Medium",
+      "productImageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=100&h=100&fit=crop",
+      "variantLabel": "Small (4 inch)",
+      "reason": "defective",
+      "status": "under_review",
+      "refundAmount": 1499,
+      "currency": "INR",
+      "requestedAt": "2026-02-09T09:15:00Z",
+      "daysOpen": 5
+    },
+    {
+      "id": "ret-297",
+      "orderNumber": "VC-20260205-2380",
+      "customerName": "Lisa Wong",
+      "customerEmail": "lisa.w@example.com",
+      "productName": "5 Mukhi Rudraksha – Certified",
+      "productImageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=100&h=100&fit=crop",
+      "variantLabel": "Standard",
+      "reason": "wrong_item",
+      "status": "approved",
+      "refundAmount": 1299,
+      "currency": "INR",
+      "requestedAt": "2026-02-06T14:00:00Z",
+      "daysOpen": 8
+    },
+    {
+      "id": "ret-296",
+      "orderNumber": "VC-20260201-2370",
+      "customerName": "Pooja Nair",
+      "customerEmail": "pooja.n@example.com",
+      "productName": "Sandalwood Incense Sticks – 100 Pack",
+      "productImageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=100&h=100&fit=crop",
+      "variantLabel": "Standard",
+      "reason": "damaged_in_transit",
+      "status": "refunded",
+      "refundAmount": 399,
+      "currency": "INR",
+      "requestedAt": "2026-02-02T10:00:00Z",
+      "daysOpen": 0
+    },
+    {
+      "id": "ret-295",
+      "orderNumber": "VC-20260130-2365",
+      "customerName": "David Park",
+      "customerEmail": "david.p@example.com",
+      "productName": "Camphor Tablets – Pack of 50",
+      "productImageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=100&h=100&fit=crop",
+      "variantLabel": "Pack of 50",
+      "reason": "size_issue",
+      "status": "refunded",
+      "refundAmount": 249,
+      "currency": "INR",
+      "requestedAt": "2026-01-31T15:30:00Z",
+      "daysOpen": 0
+    }
+  ],
+  "returnDetail": {
+    "id": "ret-301",
+    "orderNumber": "VC-20260210-2392",
+    "orderId": "ord-2392",
+    "status": "pending",
+    "customer": {
+      "id": "cust-220",
+      "name": "Michael Chen",
+      "email": "michael.c@example.com",
+      "phone": "+1 415-555-0198"
+    },
+    "product": {
+      "id": "prod-4",
+      "name": "Vastu Pyramid – Crystal Clear",
+      "variantLabel": "Medium",
+      "imageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=400&h=400&fit=crop",
+      "quantity": 1,
+      "price": 45,
+      "currency": "USD"
+    },
+    "reason": "damaged_in_transit",
+    "customerNotes": "The crystal pyramid arrived with a visible crack on the base. The packaging was intact but the product itself was not wrapped securely inside the box. I've attached photos showing the damage.",
+    "photos": [
+      { "id": "photo-1", "url": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=300&h=300&fit=crop", "caption": "Crack visible on base" },
+      { "id": "photo-2", "url": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=300&h=300&fit=crop", "caption": "Packaging condition" },
+      { "id": "photo-3", "url": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=300&h=300&fit=crop", "caption": "Close-up of damage" }
+    ],
+    "adminNotes": "",
+    "refundType": null,
+    "refundAmount": 45,
+    "refundMethod": null,
+    "isWithinReturnWindow": true,
+    "returnWindowDays": 7,
+    "timeline": [
+      { "id": "tl-1", "action": "Return Requested", "author": "Michael Chen", "note": "Reason: Damaged in transit", "timestamp": "2026-02-13T08:00:00Z" },
+      { "id": "tl-2", "action": "Photos Uploaded", "author": "Michael Chen", "note": "3 photos attached", "timestamp": "2026-02-13T08:05:00Z" }
+    ],
+    "requestedAt": "2026-02-13T08:00:00Z",
+    "resolvedAt": null
+  }
+}

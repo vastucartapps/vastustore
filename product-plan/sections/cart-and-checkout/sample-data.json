@@ -1,0 +1,276 @@
+{
+  "_meta": {
+    "models": {
+      "cartItem": "A line item in the shopping cart referencing a product variant with quantity and pricing.",
+      "coupon": "A discount code with rules, expiry, and minimum order requirements.",
+      "giftCard": "A prepaid store credit with balance and code.",
+      "address": "A saved shipping or billing address for the user.",
+      "shippingMethod": "A shipping option with price and delivery estimate.",
+      "orderSummary": "Calculated totals including subtotal, discounts, shipping, tax, and grand total.",
+      "orderConfirmation": "Details shown after a successful order placement.",
+      "relatedProduct": "Product card shown in the upsell carousel on the confirmation page."
+    },
+    "relationships": [
+      "Cart has many CartItem",
+      "CartItem references a product variant",
+      "OrderSummary is computed from CartItems, applied Coupon, GiftCard, and ShippingMethod",
+      "OrderConfirmation references the placed order and includes RelatedProducts for upsell"
+    ]
+  },
+  "cartItems": [
+    {
+      "id": "ci_01",
+      "productId": "prod_001",
+      "productName": "Seven Chakra Healing Crystal Tree",
+      "productSlug": "seven-chakra-healing-crystal-tree",
+      "variantId": "var_01",
+      "variantLabel": "Medium (10\") / Amethyst",
+      "imageUrl": "https://images.unsplash.com/photo-1603344204980-4edb0ea63148?w=400&q=80",
+      "price": 2499,
+      "mrp": 4999,
+      "currency": "INR",
+      "quantity": 1,
+      "maxQuantity": 10,
+      "inStock": true
+    },
+    {
+      "id": "ci_02",
+      "productId": "prod_003",
+      "productName": "Rose Quartz Heart Bowl",
+      "productSlug": "rose-quartz-heart-bowl",
+      "variantId": "var_rq_01",
+      "variantLabel": "Standard",
+      "imageUrl": "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=400&q=80",
+      "price": 899,
+      "mrp": 1499,
+      "currency": "INR",
+      "quantity": 2,
+      "maxQuantity": 15,
+      "inStock": true
+    },
+    {
+      "id": "ci_03",
+      "productId": "prod_005",
+      "productName": "Crystal Pyramid Set",
+      "productSlug": "crystal-pyramid-set",
+      "variantId": "var_cp_01",
+      "variantLabel": "7-Piece Set",
+      "imageUrl": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&q=80",
+      "price": 3499,
+      "mrp": 5999,
+      "currency": "INR",
+      "quantity": 1,
+      "maxQuantity": 5,
+      "inStock": true
+    }
+  ],
+  "availableCoupons": [
+    {
+      "id": "coup_01",
+      "code": "VASTU20",
+      "description": "20% off on orders above ₹2,000",
+      "discountType": "percentage",
+      "discountValue": 20,
+      "maxDiscount": 500,
+      "minOrderValue": 2000,
+      "currency": "INR",
+      "validUntil": "2026-03-31T23:59:59Z",
+      "isApplicable": true
+    },
+    {
+      "id": "coup_02",
+      "code": "CRYSTALS500",
+      "description": "Flat ₹500 off on orders above ₹3,000",
+      "discountType": "flat",
+      "discountValue": 500,
+      "maxDiscount": null,
+      "minOrderValue": 3000,
+      "currency": "INR",
+      "validUntil": "2026-04-15T23:59:59Z",
+      "isApplicable": true
+    },
+    {
+      "id": "coup_03",
+      "code": "WELCOME10",
+      "description": "10% off for first-time buyers",
+      "discountType": "percentage",
+      "discountValue": 10,
+      "maxDiscount": 300,
+      "minOrderValue": 0,
+      "currency": "INR",
+      "validUntil": "2026-12-31T23:59:59Z",
+      "isApplicable": false
+    }
+  ],
+  "appliedCoupon": {
+    "code": "VASTU20",
+    "discountAmount": 500,
+    "description": "20% off (max ₹500)"
+  },
+  "giftCardBalance": {
+    "code": "GC-VASTUCART-2026",
+    "balance": 1000,
+    "appliedAmount": 500,
+    "currency": "INR"
+  },
+  "savedAddresses": [
+    {
+      "id": "addr_01",
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "street": "42, Lotus Garden, Sector 15",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "pincode": "122001",
+      "country": "India",
+      "isDefault": true,
+      "label": "Home"
+    },
+    {
+      "id": "addr_02",
+      "name": "Priya Sharma",
+      "phone": "+91 98765 43210",
+      "street": "Tower B, 12th Floor, DLF Cyber City",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "pincode": "122002",
+      "country": "India",
+      "isDefault": false,
+      "label": "Office"
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": "ship_standard",
+      "name": "Standard Shipping",
+      "description": "Delivered in 5-7 business days",
+      "price": 0,
+      "currency": "INR",
+      "estimatedDays": "5-7 business days",
+      "isFree": true,
+      "freeAbove": 999
+    },
+    {
+      "id": "ship_express",
+      "name": "Express Shipping",
+      "description": "Delivered in 2-3 business days",
+      "price": 149,
+      "currency": "INR",
+      "estimatedDays": "2-3 business days",
+      "isFree": false,
+      "freeAbove": null
+    }
+  ],
+  "codConfig": {
+    "available": true,
+    "fee": 49,
+    "currency": "INR",
+    "minOrder": 500,
+    "maxOrder": 25000,
+    "label": "Cash on Delivery",
+    "feeLabel": "COD Fee ₹49 applicable"
+  },
+  "prepaidDiscount": {
+    "enabled": true,
+    "percentage": 5,
+    "maxDiscount": 200,
+    "label": "Save 5% with prepaid payment (max ₹200)"
+  },
+  "orderSummary": {
+    "subtotal": 7796,
+    "mrpTotal": 13496,
+    "totalSavings": 5700,
+    "couponDiscount": 500,
+    "giftCardApplied": 500,
+    "prepaidDiscount": 200,
+    "shippingFee": 0,
+    "codFee": 0,
+    "taxAmount": 0,
+    "grandTotal": 6596,
+    "currency": "INR",
+    "itemCount": 4
+  },
+  "contactInfo": {
+    "email": "priya.sharma@email.com",
+    "phone": "+91 98765 43210",
+    "countryCode": "+91",
+    "isIndian": true
+  },
+  "checkoutSteps": [
+    { "id": "contact", "label": "Contact", "status": "completed" },
+    { "id": "address", "label": "Address", "status": "completed" },
+    { "id": "shipping", "label": "Shipping", "status": "active" },
+    { "id": "payment", "label": "Payment", "status": "upcoming" }
+  ],
+  "orderConfirmation": {
+    "orderId": "VC-2026-0214-7823",
+    "orderDate": "2026-02-14T12:30:00Z",
+    "estimatedDelivery": "Feb 19–21, 2026",
+    "paymentMethod": "UPI (Razorpay)",
+    "totalPaid": 6596,
+    "currency": "INR",
+    "email": "priya.sharma@email.com",
+    "phone": "+91 98765 43210",
+    "shippingAddress": "42, Lotus Garden, Sector 15, Gurugram, Haryana 122001"
+  },
+  "relatedProducts": [
+    {
+      "id": "prod_002",
+      "name": "Amethyst Crystal Tree",
+      "slug": "amethyst-crystal-tree",
+      "imageUrl": "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=400&q=80",
+      "price": 1999,
+      "mrp": 3999,
+      "currency": "INR",
+      "rating": 4.5,
+      "reviewCount": 89,
+      "isNew": false,
+      "inStock": true
+    },
+    {
+      "id": "prod_004",
+      "name": "Vastu Brass Tortoise",
+      "slug": "vastu-brass-tortoise",
+      "imageUrl": "https://images.unsplash.com/photo-1609868816867-b0e53a846556?w=400&q=80",
+      "price": 1299,
+      "mrp": 2499,
+      "currency": "INR",
+      "rating": 4.2,
+      "reviewCount": 56,
+      "isNew": false,
+      "inStock": true
+    },
+    {
+      "id": "prod_006",
+      "name": "Selenite Charging Plate",
+      "slug": "selenite-charging-plate",
+      "imageUrl": "https://images.unsplash.com/photo-1602519093485-0630df691f68?w=400&q=80",
+      "price": 699,
+      "mrp": 999,
+      "currency": "INR",
+      "rating": 4.4,
+      "reviewCount": 112,
+      "isNew": false,
+      "inStock": true
+    },
+    {
+      "id": "prod_007",
+      "name": "Feng Shui Laughing Buddha",
+      "slug": "feng-shui-laughing-buddha",
+      "imageUrl": "https://images.unsplash.com/photo-1600298882525-15ac2053ed42?w=400&q=80",
+      "price": 1599,
+      "mrp": 2999,
+      "currency": "INR",
+      "rating": 4.6,
+      "reviewCount": 178,
+      "isNew": true,
+      "inStock": true
+    }
+  ],
+  "emptyCartState": {
+    "title": "Your cart is empty",
+    "description": "Looks like you haven't added any sacred treasures yet. Explore our collection and find the perfect piece for your space.",
+    "ctaLabel": "Start Shopping",
+    "ctaHref": "/"
+  }
+}

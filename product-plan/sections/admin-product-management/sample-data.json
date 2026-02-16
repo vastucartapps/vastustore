@@ -1,0 +1,290 @@
+{
+  "_meta": {
+    "models": {
+      "Product": "A product in the catalog list with summary info for display in grid/table.",
+      "ProductDetail": "Full product data used in the add/edit wizard, extends Product with variants, images, rich content, specs, FAQs, SEO, and merchant centre fields.",
+      "ProductVariant": "A variant of a product (e.g. size, color) with its own SKU, price, and stock.",
+      "CategoryOption": "A category available for filtering or assignment."
+    },
+    "relationships": [
+      "Products belong to a Category.",
+      "ProductDetail extends Product with full editing data.",
+      "Each Product can have multiple ProductVariants."
+    ]
+  },
+  "viewMode": "grid",
+  "totalCount": 47,
+  "filters": {
+    "search": "",
+    "status": "all",
+    "category": "",
+    "stockLevel": "all"
+  },
+  "categories": [
+    { "id": "cat-1", "name": "Puja Essentials", "parentName": null },
+    { "id": "cat-2", "name": "Idols & Statues", "parentName": null },
+    { "id": "cat-3", "name": "Vastu Products", "parentName": null },
+    { "id": "cat-4", "name": "Rudraksha & Malas", "parentName": null },
+    { "id": "cat-5", "name": "Yantra & Frames", "parentName": null },
+    { "id": "cat-6", "name": "Incense & Dhoop", "parentName": "Puja Essentials" },
+    { "id": "cat-7", "name": "Books & Guides", "parentName": null }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Brass Ganesha Idol – Medium",
+      "sku": "VC-IDOL-GAN-M",
+      "category": "Idols & Statues",
+      "categoryId": "cat-2",
+      "status": "active",
+      "price": 2499,
+      "mrp": 3499,
+      "currency": "INR",
+      "stock": 24,
+      "stockLevel": "in_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=300&h=300&fit=crop",
+      "rating": 4.7,
+      "reviewCount": 89,
+      "variantCount": 3,
+      "createdAt": "2025-11-15T10:00:00Z",
+      "updatedAt": "2026-02-10T14:20:00Z"
+    },
+    {
+      "id": "prod-2",
+      "name": "Tulsi Mala – 108 Beads Premium",
+      "sku": "VC-MALA-TUL-108",
+      "category": "Rudraksha & Malas",
+      "categoryId": "cat-4",
+      "status": "active",
+      "price": 599,
+      "mrp": 899,
+      "currency": "INR",
+      "stock": 3,
+      "stockLevel": "low_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=300&h=300&fit=crop",
+      "rating": 4.5,
+      "reviewCount": 156,
+      "variantCount": 1,
+      "createdAt": "2025-10-20T08:30:00Z",
+      "updatedAt": "2026-02-12T09:15:00Z"
+    },
+    {
+      "id": "prod-3",
+      "name": "Camphor Tablets – Pack of 50",
+      "sku": "VC-PUJA-CAM-50",
+      "category": "Puja Essentials",
+      "categoryId": "cat-1",
+      "status": "active",
+      "price": 249,
+      "mrp": 349,
+      "currency": "INR",
+      "stock": 4,
+      "stockLevel": "low_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop",
+      "rating": 4.3,
+      "reviewCount": 212,
+      "variantCount": 2,
+      "createdAt": "2025-09-05T12:00:00Z",
+      "updatedAt": "2026-02-13T16:45:00Z"
+    },
+    {
+      "id": "prod-4",
+      "name": "Vastu Pyramid – Crystal Clear",
+      "sku": "VC-VASTU-PYR-CC",
+      "category": "Vastu Products",
+      "categoryId": "cat-3",
+      "status": "active",
+      "price": 1899,
+      "mrp": 2499,
+      "currency": "INR",
+      "stock": 15,
+      "stockLevel": "in_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1600298881979-2db4a1c40069?w=300&h=300&fit=crop",
+      "rating": 4.8,
+      "reviewCount": 67,
+      "variantCount": 4,
+      "createdAt": "2025-12-01T09:00:00Z",
+      "updatedAt": "2026-02-08T11:30:00Z"
+    },
+    {
+      "id": "prod-5",
+      "name": "Sandalwood Incense Sticks – 100 Pack",
+      "sku": "VC-INC-SAN-100",
+      "category": "Incense & Dhoop",
+      "categoryId": "cat-6",
+      "status": "active",
+      "price": 399,
+      "mrp": 499,
+      "currency": "INR",
+      "stock": 78,
+      "stockLevel": "in_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=300&h=300&fit=crop",
+      "rating": 4.6,
+      "reviewCount": 324,
+      "variantCount": 1,
+      "createdAt": "2025-08-10T14:00:00Z",
+      "updatedAt": "2026-02-14T08:00:00Z"
+    },
+    {
+      "id": "prod-6",
+      "name": "Sri Yantra Gold Plated Frame",
+      "sku": "VC-YAN-SRI-GP",
+      "category": "Yantra & Frames",
+      "categoryId": "cat-5",
+      "status": "inactive",
+      "price": 4999,
+      "mrp": 6999,
+      "currency": "INR",
+      "stock": 0,
+      "stockLevel": "out_of_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?w=300&h=300&fit=crop",
+      "rating": 4.9,
+      "reviewCount": 43,
+      "variantCount": 2,
+      "createdAt": "2025-11-25T16:00:00Z",
+      "updatedAt": "2026-01-20T10:00:00Z"
+    },
+    {
+      "id": "prod-7",
+      "name": "5 Mukhi Rudraksha – Certified",
+      "sku": "VC-RUD-5MK-CERT",
+      "category": "Rudraksha & Malas",
+      "categoryId": "cat-4",
+      "status": "active",
+      "price": 1299,
+      "mrp": 1799,
+      "currency": "INR",
+      "stock": 31,
+      "stockLevel": "in_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=300&h=300&fit=crop",
+      "rating": 4.4,
+      "reviewCount": 98,
+      "variantCount": 1,
+      "createdAt": "2025-10-10T11:00:00Z",
+      "updatedAt": "2026-02-11T13:20:00Z"
+    },
+    {
+      "id": "prod-8",
+      "name": "Vastu Shastra Complete Guide",
+      "sku": "VC-BOOK-VSG-01",
+      "category": "Books & Guides",
+      "categoryId": "cat-7",
+      "status": "draft",
+      "price": 699,
+      "mrp": 999,
+      "currency": "INR",
+      "stock": 50,
+      "stockLevel": "in_stock",
+      "imageUrl": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=300&fit=crop",
+      "rating": 0,
+      "reviewCount": 0,
+      "variantCount": 1,
+      "createdAt": "2026-02-13T09:00:00Z",
+      "updatedAt": "2026-02-13T09:00:00Z"
+    }
+  ],
+  "editingProduct": {
+    "id": "prod-1",
+    "name": "Brass Ganesha Idol – Medium",
+    "sku": "VC-IDOL-GAN-M",
+    "category": "Idols & Statues",
+    "categoryId": "cat-2",
+    "status": "active",
+    "price": 2499,
+    "mrp": 3499,
+    "currency": "INR",
+    "stock": 24,
+    "stockLevel": "in_stock",
+    "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=300&h=300&fit=crop",
+    "rating": 4.7,
+    "reviewCount": 89,
+    "variantCount": 3,
+    "createdAt": "2025-11-15T10:00:00Z",
+    "updatedAt": "2026-02-10T14:20:00Z",
+    "description": "Exquisitely crafted brass Ganesha idol, perfect for your home temple or office. This medium-sized murti features intricate detailing on the trunk, crown, and ornaments. Made from solid brass with a natural antique finish that develops a beautiful patina over time. Each piece is handcrafted by skilled artisans from Moradabad, known for their centuries-old brass craftsmanship tradition.",
+    "shortDescription": "Handcrafted brass Ganesha idol with intricate detailing. Medium size perfect for home temple.",
+    "variants": [
+      {
+        "id": "var-1",
+        "sku": "VC-IDOL-GAN-S",
+        "label": "Small (4 inch)",
+        "price": 1499,
+        "mrp": 2199,
+        "currency": "INR",
+        "stock": 18,
+        "stockLevel": "in_stock"
+      },
+      {
+        "id": "var-2",
+        "sku": "VC-IDOL-GAN-M",
+        "label": "Medium (6 inch)",
+        "price": 2499,
+        "mrp": 3499,
+        "currency": "INR",
+        "stock": 24,
+        "stockLevel": "in_stock"
+      },
+      {
+        "id": "var-3",
+        "sku": "VC-IDOL-GAN-L",
+        "label": "Large (8 inch)",
+        "price": 3999,
+        "mrp": 5499,
+        "currency": "INR",
+        "stock": 6,
+        "stockLevel": "low_stock"
+      }
+    ],
+    "images": [
+      { "id": "img-1", "url": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=600&h=600&fit=crop", "alt": "Brass Ganesha Idol front view", "isPrimary": true, "sortOrder": 1 },
+      { "id": "img-2", "url": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=600&h=600&fit=crop", "alt": "Brass Ganesha Idol side view", "isPrimary": false, "sortOrder": 2 },
+      { "id": "img-3", "url": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=600&h=600&fit=crop", "alt": "Brass Ganesha Idol detail", "isPrimary": false, "sortOrder": 3 }
+    ],
+    "richContent": [
+      {
+        "id": "rc-1",
+        "type": "image_text",
+        "title": "Handcrafted Excellence",
+        "content": "Each idol is handcrafted by master artisans of Moradabad, carrying forward a tradition that spans over 400 years.",
+        "imageUrl": "https://images.unsplash.com/photo-1567591370504-80c3dd7d8e07?w=400&h=300&fit=crop"
+      },
+      {
+        "id": "rc-2",
+        "type": "text",
+        "title": "Pure Brass Quality",
+        "content": "Made from high-grade solid brass, this idol is built to last generations. The natural patina that develops over time adds to its antique charm and spiritual significance."
+      }
+    ],
+    "specs": [
+      { "id": "spec-1", "label": "Material", "value": "Solid Brass", "group": "General" },
+      { "id": "spec-2", "label": "Weight", "value": "850g", "group": "General" },
+      { "id": "spec-3", "label": "Height", "value": "6 inches", "group": "Dimensions" },
+      { "id": "spec-4", "label": "Width", "value": "4 inches", "group": "Dimensions" },
+      { "id": "spec-5", "label": "Finish", "value": "Natural Antique", "group": "Appearance" },
+      { "id": "spec-6", "label": "Country of Origin", "value": "India", "group": "General" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is this idol suitable for daily puja?", "answer": "Yes, absolutely. This brass Ganesha idol is designed for daily worship. Brass is a traditional material for puja murtis and is easy to maintain." },
+      { "id": "faq-2", "question": "How do I clean and maintain the brass idol?", "answer": "Clean with a soft dry cloth regularly. For deep cleaning, use a mixture of lemon juice and baking soda. Avoid harsh chemical cleaners." },
+      { "id": "faq-3", "question": "Does it come with a certificate of authenticity?", "answer": "Yes, each idol comes with a certificate of authenticity from the artisan workshop in Moradabad." }
+    ],
+    "seo": {
+      "metaTitle": "Brass Ganesha Idol – Handcrafted Medium Size | VastuCart",
+      "metaDescription": "Buy handcrafted brass Ganesha idol online. Medium 6-inch murti with intricate detailing. Free shipping. Made by Moradabad artisans.",
+      "urlSlug": "brass-ganesha-idol-medium",
+      "canonicalUrl": "https://store.vastucart.in/products/brass-ganesha-idol-medium"
+    },
+    "merchantCentre": {
+      "gtin": "8901234567890",
+      "mpn": "VC-IDOL-GAN-M",
+      "brand": "VastuCart",
+      "condition": "new",
+      "ageGroup": "adult",
+      "gender": "unisex",
+      "googleCategory": "Religious Items > Hindu Religious Items > Murtis & Idols"
+    },
+    "tags": ["ganesha", "brass", "idol", "puja", "handcrafted", "moradabad"],
+    "hsnCode": "8306",
+    "gstRate": 12
+  }
+}

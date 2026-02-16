@@ -1,0 +1,243 @@
+{
+  "_meta": {
+    "models": {
+      "DashboardStat": "A single stat card showing a metric label, value, delta comparison, and link to the relevant admin section.",
+      "RevenueBar": "A single bar in the daily revenue chart, representing one day's revenue amount.",
+      "RecentOrder": "A recent order summary shown in the dashboard orders table with inline status update capability.",
+      "QuickAction": "A shortcut button for common admin tasks like adding a product or creating a coupon.",
+      "Alert": "A warning item requiring admin attention, such as low stock, pending review, or new return request."
+    },
+    "relationships": [
+      "Each DashboardStat links to a specific admin section.",
+      "RecentOrders are a subset of all orders, shown for quick access.",
+      "Alerts aggregate counts or items from products, reviews, and returns sections."
+    ]
+  },
+  "timePeriod": "today",
+  "stats": [
+    {
+      "id": "total-orders",
+      "label": "Total Orders",
+      "value": 48,
+      "previousValue": 41,
+      "format": "number",
+      "icon": "shopping-bag",
+      "linkTo": "orders"
+    },
+    {
+      "id": "revenue",
+      "label": "Revenue",
+      "value": 187450,
+      "previousValue": 162300,
+      "format": "currency",
+      "currency": "INR",
+      "icon": "indian-rupee",
+      "linkTo": "orders"
+    },
+    {
+      "id": "pending-orders",
+      "label": "Pending Orders",
+      "value": 12,
+      "previousValue": 8,
+      "format": "number",
+      "icon": "clock",
+      "linkTo": "orders"
+    },
+    {
+      "id": "low-stock",
+      "label": "Low Stock Items",
+      "value": 7,
+      "previousValue": 5,
+      "format": "number",
+      "icon": "alert-triangle",
+      "linkTo": "products"
+    },
+    {
+      "id": "new-customers",
+      "label": "New Customers",
+      "value": 23,
+      "previousValue": 19,
+      "format": "number",
+      "icon": "users",
+      "linkTo": "customers"
+    },
+    {
+      "id": "recent-reviews",
+      "label": "New Reviews",
+      "value": 15,
+      "previousValue": 11,
+      "format": "number",
+      "icon": "star",
+      "linkTo": "reviews"
+    }
+  ],
+  "revenueBars": [
+    { "date": "2026-02-08", "label": "Sat", "amount": 21200 },
+    { "date": "2026-02-09", "label": "Sun", "amount": 18700 },
+    { "date": "2026-02-10", "label": "Mon", "amount": 27500 },
+    { "date": "2026-02-11", "label": "Tue", "amount": 31400 },
+    { "date": "2026-02-12", "label": "Wed", "amount": 24800 },
+    { "date": "2026-02-13", "label": "Thu", "amount": 29350 },
+    { "date": "2026-02-14", "label": "Fri", "amount": 34500 }
+  ],
+  "recentOrders": [
+    {
+      "id": "ord-2401",
+      "orderNumber": "VC-20260214-2401",
+      "customerName": "Priya Sharma",
+      "customerEmail": "priya.sharma@example.com",
+      "total": 4599,
+      "currency": "INR",
+      "status": "processing",
+      "itemCount": 3,
+      "date": "2026-02-14T10:23:00Z"
+    },
+    {
+      "id": "ord-2400",
+      "orderNumber": "VC-20260214-2400",
+      "customerName": "Amit Patel",
+      "customerEmail": "amit.patel@example.com",
+      "total": 8750,
+      "currency": "INR",
+      "status": "accepted",
+      "itemCount": 2,
+      "date": "2026-02-14T09:45:00Z"
+    },
+    {
+      "id": "ord-2399",
+      "orderNumber": "VC-20260213-2399",
+      "customerName": "Sarah Miller",
+      "customerEmail": "sarah.m@example.com",
+      "total": 62,
+      "currency": "USD",
+      "status": "shipped",
+      "itemCount": 1,
+      "date": "2026-02-13T22:10:00Z"
+    },
+    {
+      "id": "ord-2398",
+      "orderNumber": "VC-20260213-2398",
+      "customerName": "Deepika Menon",
+      "customerEmail": "deepika.menon@example.com",
+      "total": 12300,
+      "currency": "INR",
+      "status": "processing",
+      "itemCount": 5,
+      "date": "2026-02-13T18:30:00Z"
+    },
+    {
+      "id": "ord-2397",
+      "orderNumber": "VC-20260213-2397",
+      "customerName": "Rajesh Kumar",
+      "customerEmail": "rajesh.k@example.com",
+      "total": 3200,
+      "currency": "INR",
+      "status": "delivered",
+      "itemCount": 1,
+      "date": "2026-02-13T14:05:00Z"
+    },
+    {
+      "id": "ord-2396",
+      "orderNumber": "VC-20260212-2396",
+      "customerName": "Meera Joshi",
+      "customerEmail": "meera.j@example.com",
+      "total": 6450,
+      "currency": "INR",
+      "status": "out_for_delivery",
+      "itemCount": 4,
+      "date": "2026-02-12T11:20:00Z"
+    },
+    {
+      "id": "ord-2395",
+      "orderNumber": "VC-20260212-2395",
+      "customerName": "John Davis",
+      "customerEmail": "john.d@example.com",
+      "total": 89,
+      "currency": "USD",
+      "status": "in_transit",
+      "itemCount": 2,
+      "date": "2026-02-12T08:50:00Z"
+    },
+    {
+      "id": "ord-2394",
+      "orderNumber": "VC-20260211-2394",
+      "customerName": "Kavita Singh",
+      "customerEmail": "kavita.s@example.com",
+      "total": 1899,
+      "currency": "INR",
+      "status": "cancelled",
+      "itemCount": 1,
+      "date": "2026-02-11T16:40:00Z"
+    }
+  ],
+  "quickActions": [
+    {
+      "id": "add-product",
+      "label": "Add Product",
+      "icon": "plus-circle",
+      "href": "/admin/products/new",
+      "color": "primary"
+    },
+    {
+      "id": "new-order",
+      "label": "New Order",
+      "icon": "shopping-cart",
+      "href": "/admin/orders/new",
+      "color": "secondary"
+    },
+    {
+      "id": "new-coupon",
+      "label": "New Coupon",
+      "icon": "ticket",
+      "href": "/admin/coupons/new",
+      "color": "primary"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-1",
+      "type": "low_stock",
+      "title": "Brass Ganesha Idol (Small)",
+      "message": "Only 2 left in stock",
+      "severity": "critical",
+      "linkTo": "/admin/products/brass-ganesha-idol",
+      "meta": { "currentQty": 2, "threshold": 5 }
+    },
+    {
+      "id": "alert-2",
+      "type": "low_stock",
+      "title": "Tulsi Mala – 108 Beads",
+      "message": "Only 3 left in stock",
+      "severity": "warning",
+      "linkTo": "/admin/products/tulsi-mala-108",
+      "meta": { "currentQty": 3, "threshold": 10 }
+    },
+    {
+      "id": "alert-3",
+      "type": "low_stock",
+      "title": "Camphor Tablets (Pack of 50)",
+      "message": "Only 4 left in stock",
+      "severity": "warning",
+      "linkTo": "/admin/products/camphor-tablets-50",
+      "meta": { "currentQty": 4, "threshold": 10 }
+    },
+    {
+      "id": "alert-4",
+      "type": "pending_review",
+      "title": "5 reviews awaiting moderation",
+      "message": "Oldest review is 2 days old",
+      "severity": "info",
+      "linkTo": "/admin/reviews?status=pending",
+      "meta": { "count": 5 }
+    },
+    {
+      "id": "alert-5",
+      "type": "new_return",
+      "title": "3 new return requests",
+      "message": "1 return pending for over 24 hours",
+      "severity": "warning",
+      "linkTo": "/admin/returns?status=pending",
+      "meta": { "count": 3 }
+    }
+  ]
+}
